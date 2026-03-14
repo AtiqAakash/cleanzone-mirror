@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="utf-8"/>
-    <title>Cleanzone</title>
-    <meta content="Med over 25 års erfaring er Cleanzone Norges fremste leverandør av ozonvannsteknologi for rengjøring. Våre løsninger, støttet av vår omfattende ekspertise, revolusjonerer rengjørings-bransjen. Fra vårt kontor i Oslo betjener vi kunder over hele landet med en enklere, mer effektiv og kostnadsbesparende rengjøringsmetode. Vår kompetanse og kunnskap har gjort oss til den foretrukne partneren for steder der rengjøring og desinfeksjon er en del av hverdagen." name="description"/>
-    <meta content="Cleanzone" property="og:title"/>
-    <meta content="Med over 25 års erfaring er Cleanzone Norges fremste leverandør av ozonvannsteknologi for rengjøring. Våre løsninger, støttet av vår omfattende ekspertise, revolusjonerer rengjørings-bransjen. Fra vårt kontor i Oslo betjener vi kunder over hele landet med en enklere, mer effektiv og kostnadsbesparende rengjøringsmetode. Vår kompetanse og kunnskap har gjort oss til den foretrukne partneren for steder der rengjøring og desinfeksjon er en del av hverdagen." property="og:description"/>
-    <meta content="img/67066e94bbf636fdaf3dbb4d_Bilde til lenke_SoMe_V2.jpg" property="og:image"/>
-    <meta content="Cleanzone" property="twitter:title"/>
-    <meta content="Med over 25 års erfaring er Cleanzone Norges fremste leverandør av ozonvannsteknologi for rengjøring. Våre løsninger, støttet av vår omfattende ekspertise, revolusjonerer rengjørings-bransjen. Fra vårt kontor i Oslo betjener vi kunder over hele landet med en enklere, mer effektiv og kostnadsbesparende rengjøringsmetode. Vår kompetanse og kunnskap har gjort oss til den foretrukne partneren for steder der rengjøring og desinfeksjon er en del av hverdagen." property="twitter:description"/>
-    <meta content="img/67066e94bbf636fdaf3dbb4d_Bilde til lenke_SoMe_V2.jpg" property="twitter:image"/>
-    <meta property="og:type" content="website"/>
-    <meta content="summary_large_image" name="twitter:card"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    
-    <!-- Local CSS -->
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleanzone - Rent har fått en ny betydning</title>
+    <meta name="description" content="Med over 25 års erfaring er Cleanzone Norges fremste leverandør av ozonvannsteknologi for rengjøring. Våre løsninger, støttet av vår omfattende ekspertise, revolusjonerer rengjørings-bransjen.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-    
-    <!-- Favicon -->
-    <link href="img/66a88d6f8baf37107b34b6a4_Cleanzone%20Icon.png" rel="shortcut icon" type="image/x-icon"/>
-    <link href="img/66a88d9bb7701653b6034c08_Cleanzone%20Webclip.png" rel="apple-touch-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <style>
-        /* Basic styles to ensure video background works */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cleanzone-white: #f6f6f6;
+            --cleanzone-dark-blue: #264164;
+            --cleanzone-light-polished-blue: #e8f4f9;
+            --cleanzone-pink: #d77fa3;
+            --cleanzone-variant-light-blue: #8bc8dc;
+            --cleanzone-green: #3b846c;
+            --cleanzone-yellow: #fcc249;
+            --cleanzone-orange: #f08b44;
+            --cleanzone-light-green: #4da88b;
+            --cleanzone-polished-blue: #e0f0f2;
+        }
+
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            color: #333;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oxanium', sans-serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Video Hero Section */
         .hero-video {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
         }
+
         .hero-video video {
             position: absolute;
             top: 50%;
@@ -44,1120 +61,1355 @@
             height: auto;
             transform: translateX(-50%) translateY(-50%);
             object-fit: cover;
+            z-index: 0;
         }
-        .mobile-navbar-menu {
+
+        /* Navigation */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 9vw;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--cleanzone-polished-blue);
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--cleanzone-dark-blue);
+        }
+
+        .navbar.scrolled .logo-white {
             display: none;
         }
-        .close-icon {
+
+        .navbar.scrolled .logo-blue {
+            display: block;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-white {
+            display: block;
+        }
+
+        .logo-blue {
             display: none;
         }
+
+        .logo svg {
+            width: 180px;
+            height: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-family: 'Red Hat Display', sans-serif;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--cleanzone-polished-blue);
+            min-width: 200px;
+            border-radius: 0 0 8px 8px;
+            padding: 0.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--cleanzone-dark-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-link:hover {
+            background-color: rgba(38, 65, 100, 0.1);
+        }
+
+        /* Mobile Navigation */
+        .mobile-navbar {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .mobile-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--cleanzone-polished-blue);
+            z-index: 1000;
+            padding: 5rem 2rem;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--cleanzone-dark-blue);
+            cursor: pointer;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav-title {
+            color: var(--cleanzone-dark-blue);
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .mobile-nav-link {
+            color: var(--cleanzone-dark-blue);
+            text-decoration: none;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .mobile-nav-link:hover {
+            opacity: 1;
+        }
+
+        /* Hero Text */
+        .hero-content {
+            position: absolute;
+            bottom: 10vh;
+            left: 9vw;
+            z-index: 10;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 5vw;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.8vw;
+            max-width: 45%;
+            line-height: 1.5;
+        }
+
+        .hero-description strong {
+            font-weight: 600;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 10vh;
+            right: 9vw;
+            z-index: 10;
+        }
+
+        .scroll-down a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: var(--cleanzone-dark-blue);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .scroll-down a:hover {
+            transform: translateY(5px);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 9vw;
+        }
+
+        .section-title {
+            font-size: 3vw;
+            color: var(--cleanzone-dark-blue);
+            margin-bottom: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5vw;
+            color: var(--cleanzone-variant-light-blue);
+            margin-bottom: 2rem;
+        }
+
+        /* Testimonial Section */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            text-align: center;
+        }
+
+        .testimonial-icon {
+            width: 9vw;
+            height: 9vw;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .testimonial-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-card h3 {
+            font-size: 1.4vw;
+            font-weight: 700;
+            color: var(--cleanzone-dark-blue);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            border-radius: 2vw;
+            padding: 2rem;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card.left {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/6804d787d8d2a2893d38358f_Frame 70-2.png');
+        }
+
+        .service-card.right {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/67cf4c62a5cf0b73c080c400_Ozonvannspakker fors ide.png');
+        }
+
+        .service-card h2 {
+            font-size: 3.5vw;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1.7vw;
+            margin-bottom: 2rem;
+            max-width: 60%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: white;
+            color: var(--cleanzone-dark-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--cleanzone-dark-blue);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--cleanzone-dark-blue);
+        }
+
+        /* Graphics Section */
+        .graphics-section {
+            background-color: var(--cleanzone-light-polished-blue);
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            padding: 4rem 9vw;
+        }
+
+        .graphics-content {
+            flex: 1;
+        }
+
+        .graphics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .graphics-item {
+            text-align: center;
+        }
+
+        .graphics-item svg {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Numbers Section */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .number-card {
+            border-radius: 2vw;
+            padding: 2rem;
+            color: white;
+        }
+
+        .number-card.light-blue { background-color: var(--cleanzone-variant-light-blue); }
+        .number-card.pink { background-color: var(--cleanzone-pink); }
+        .number-card.green { background-color: var(--cleanzone-light-green); }
+        .number-card.yellow { background-color: var(--cleanzone-yellow); }
+        .number-card.dark-blue { background-color: var(--cleanzone-dark-blue); }
+        .number-card.orange { background-color: var(--cleanzone-orange); }
+
+        .number-card .number {
+            font-size: 4.5vw;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .number-card .label {
+            font-size: 1.7vw;
+            margin-bottom: 0.5rem;
+        }
+
+        .number-card .note {
+            font-size: 1vw;
+            opacity: 0.7;
+        }
+
+        /* Customer Logos */
+        .customer-slider {
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .customer-track {
+            display: flex;
+            gap: 5vw;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+
+        .customer-track:hover {
+            animation-play-state: paused;
+        }
+
+        .customer-item {
+            min-width: 250px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .customer-item img {
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(1);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .customer-item:hover img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-item {
+            border-radius: 2vw;
+            overflow: hidden;
+        }
+
+        .testimonial-item.light {
+            background-color: var(--cleanzone-polished-blue);
+        }
+
+        .testimonial-item.dark {
+            background-color: var(--cleanzone-dark-blue);
+            color: white;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .testimonial-content {
+            padding: 2rem;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-header img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .testimonial-header h3 {
+            font-size: 1.6vw;
+        }
+
+        .testimonial-header h3.white {
+            color: white;
+        }
+
+        .testimonial-text {
+            font-size: 1.4vw;
+            font-style: italic;
+        }
+
+        /* Two Column Section */
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .two-column-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .two-column-icon {
+            width: 9vw;
+            height: 9vw;
+            flex-shrink: 0;
+        }
+
+        .two-column-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .two-column-content h3 {
+            font-size: 1.7vw;
+            color: var(--cleanzone-dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .two-column-content p {
+            font-size: 1.3vw;
+            color: var(--cleanzone-dark-blue);
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .news-card {
+            border-radius: 1vw;
+            overflow: hidden;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+            background-color: var(--cleanzone-polished-blue);
+        }
+
+        .news-content h3 {
+            font-size: 1.7vw;
+            color: var(--cleanzone-dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .news-content p {
+            font-size: 1.3vw;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--cleanzone-polished-blue);
+            border-radius: 2vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 5rem;
+        }
+
+        .contact-section h2 {
+            font-size: 3.3vw;
+            color: var(--cleanzone-dark-blue);
+            max-width: 70%;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .headset-icon svg {
+            width: 9vw;
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--cleanzone-white);
+            padding: 4rem 9vw 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1.5vw;
+            margin-bottom: 1.5rem;
+            color: black;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.3vw;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.5;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .footer-logo svg {
+            width: 200px;
+            height: auto;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links span {
+            font-size: 1.8vw;
+        }
+
+        .social-icon {
+            width: 3vw;
+            height: 3vw;
+            transition: all 0.2s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .certificates {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .cleanzone-navbar-white {
-                display: none !important;
+            .navbar {
+                display: none;
             }
+
             .mobile-navbar {
-                display: block !important;
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+                max-width: 100%;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-card h3 {
+                font-size: 14px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card h2 {
+                font-size: 30px;
+            }
+
+            .service-card p {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            .graphics-section {
+                flex-direction: column;
+            }
+
+            .graphics-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .number-card .number {
+                font-size: 40px;
+            }
+
+            .number-card .label {
+                font-size: 16px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-header h3 {
+                font-size: 18px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+            }
+
+            .two-column-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .two-column-content h3 {
+                font-size: 18px;
+            }
+
+            .two-column-content p {
+                font-size: 14px;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-content h3 {
+                font-size: 20px;
+            }
+
+            .news-content p {
+                font-size: 14px;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 24px;
+                max-width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-column h4 {
+                font-size: 18px;
+            }
+
+            .footer-links a {
+                font-size: 14px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .social-links span {
+                font-size: 16px;
+            }
+
+            .social-icon {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
 </head>
-<body class="cleanzone-body">
-
-<!-- Hero Video Section -->
-<div class="hero-video">
-    <video autoplay loop muted playsinline>
-        <source src="video/hero.mp4" type="video/mp4">
-    </video>
-
-    <!-- Navigation - White Version (Desktop) -->
-    <nav class="cleanzone-navbar-white">
-        <div class="navbar__wrapper">
-            <div class="navbar-centering-layer">
-                <div class="navbar-content-wrapper">
-                    <div class="navbar__container">
-                        <div class="navbar__navmenu">
-                            <a href="/" aria-current="page" class="cleanzone-logo-white w-nav-brand w--current">
-                                <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" loading="lazy" alt="Cleanzone" class="logo-svg-embed-white"/>
-                                <img src="img/673b1afcfc3a8859fe3a4855_Cleanzone_dark_blue.svg" loading="lazy" alt="Cleanzone" class="logo-svg-embed-blue-wn"/>
-                            </a>
-                            <div class="navmenu__flex-container">
-                                <ul role="list" class="navmenu__link-list w-list-unstyled">
-                                    <li class="link-list__list-item cc-first">
-                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
-                                                <div class="navbar-text-white">Om oss</div>
-                                            </div>
-                                            <nav class="navbar-dropdown-list w-dropdown-list">
-                                                <a href="#team" class="navbar-dropdown-link w-dropdown-link">Teamet</a>
-                                                <a href="#baerekraft" class="navbar-dropdown-link w-dropdown-link">Bærekraft</a>
-                                                <a href="#kundeomtaler" class="navbar-dropdown-link w-dropdown-link">Kundeomtaler</a>
-                                                <a href="#om-ozonvann" class="navbar-dropdown-link w-dropdown-link">Om ozonvann</a>
-                                            </nav>
-                                        </div>
-                                    </li>
-                                    <li class="link-list__list-item cc-first">
-                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
-                                                <div class="navbar-text-white">Våre ozonvannstjenester</div>
-                                            </div>
-                                            <nav class="navbar-dropdown-list w-dropdown-list">
-                                                <a href="#pakker" class="navbar-dropdown-link w-dropdown-link">Rengjøringspakker</a>
-                                                <a href="#service" class="navbar-dropdown-link w-dropdown-link">Cleanzone Service</a>
-                                            </nav>
-                                        </div>
-                                    </li>
-                                    <li class="link-list__list-item cc-first">
-                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
-                                                <div class="navbar-text-white">Kontakt</div>
-                                            </div>
-                                            <nav class="navbar-dropdown-list w-dropdown-list">
-                                                <a href="#kontakt" class="navbar-dropdown-link w-dropdown-link">Kontakt oss</a>
-                                                <a href="#nyheter" class="navbar-dropdown-link w-dropdown-link">Nyheter</a>
-                                            </nav>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">
+                <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" alt="Cleanzone" class="logo-white" style="width: 180px;">
+                <img src="img/673b1afcfc3a8859fe3a4855_Cleanzone_dark_blue.svg" alt="Cleanzone" class="logo-blue" style="width: 180px;">
+            </a>
+            
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <span class="nav-link">Om oss <span class="material-icons">arrow_drop_down</span></span>
+                    <div class="dropdown-menu">
+                        <a href="#team" class="dropdown-link">Teamet</a>
+                        <a href="#baerekraft" class="dropdown-link">Bærekraft</a>
+                        <a href="#kundeomtaler" class="dropdown-link">Kundeomtaler</a>
+                        <a href="#om-ozonvann" class="dropdown-link">Om ozonvann</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-link">Våre ozonvannstjenester <span class="material-icons">arrow_drop_down</span></span>
+                    <div class="dropdown-menu">
+                        <a href="#pakker" class="dropdown-link">Rengjøringspakker</a>
+                        <a href="#service" class="dropdown-link">Cleanzone Service</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-link">Kontakt <span class="material-icons">arrow_drop_down</span></span>
+                    <div class="dropdown-menu">
+                        <a href="#kontakt" class="dropdown-link">Kontakt oss</a>
+                        <a href="#nyheter" class="dropdown-link">Nyheter</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+
     <!-- Mobile Navigation -->
-       <div class="mobile-navbar">
-        <div class="mobile-navbar-container">
-            <div class="mobile-navbar-main">
-                <div class="mobile-logo-container">
-                    <a href="/" aria-current="page" class="cleanzone-logo-white-mobile">
-                        <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" alt="Cleanzone" style="width: 154px; height: 26px;"/>
-                    </a>
-                </div>
-                <div class="mobile-menu-button">
-                    <div class="hamburger-icon" style="display: block;">☰</div>
-                    <div class="close-icon" style="display: none;">✕</div>
+    <div class="mobile-navbar">
+        <div class="mobile-nav-container">
+            <a href="/" class="logo">
+                <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" alt="Cleanzone" style="width: 150px;">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+            <div class="mobile-nav-item">
+                <div class="mobile-nav-title">Om oss</div>
+                <div class="mobile-nav-links">
+                    <a href="#team" class="mobile-nav-link">Teamet</a>
+                    <a href="#baerekraft" class="mobile-nav-link">Bærekraft</a>
+                    <a href="#kundeomtaler" class="mobile-nav-link">Kundeomtaler</a>
+                    <a href="#om-ozonvann" class="mobile-nav-link">Om ozonvann</a>
                 </div>
             </div>
-            <nav class="mobile-navbar-menu" style="display: none;">
-                <div class="navbar-mobile-menu-content-wrapper">
-                    <div class="navbar-mobile-text-container">
-                        <div class="mobile-navbar-title-blue">Om oss</div>
-                        <a href="#team" class="mobile-navbar-link-blue">Teamet</a>
-                        <a href="#baerekraft" class="mobile-navbar-link-blue">Bærekraft</a>
-                        <a href="#kundeomtaler" class="mobile-navbar-link-blue">Kundeomtaler</a>
-                        <a href="#om-ozonvann" class="mobile-navbar-link-blue">Om ozonvann</a>
-                    </div>
-                    <div class="navbar-mobile-text-container">
-                        <div class="mobile-navbar-title-blue">Våre ozonvannstjenester</div>
-                        <a href="#pakker" class="mobile-navbar-link-blue">Rengjøringspakker</a>
-                        <a href="#service" class="mobile-navbar-link-blue">Cleanzone Service</a>
-                    </div>
-                    <div class="navbar-mobile-text-container">
-                        <div class="mobile-navbar-title-blue">Kontakt</div>
-                        <a href="#kontakt" class="mobile-navbar-link-blue">Kontakt oss</a>
-                        <a href="#nyheter" class="mobile-navbar-link-blue">Nyheter</a>
-                    </div>
+            <div class="mobile-nav-item">
+                <div class="mobile-nav-title">Våre ozonvannstjenester</div>
+                <div class="mobile-nav-links">
+                    <a href="#pakker" class="mobile-nav-link">Rengjøringspakker</a>
+                    <a href="#service" class="mobile-nav-link">Cleanzone Service</a>
                 </div>
-            </nav>
+            </div>
+            <div class="mobile-nav-item">
+                <div class="mobile-nav-title">Kontakt</div>
+                <div class="mobile-nav-links">
+                    <a href="#kontakt" class="mobile-nav-link">Kontakt oss</a>
+                    <a href="#nyheter" class="mobile-nav-link">Nyheter</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Hero Text -->
-    <div class="hero-text-centering-bottom">
-        <div class="hero-text-wrapper">
-            <div class="hero-top-text-container">
-                <div class="subtitle-hero-white">Rent har fått en<br/>ny betydning.</div>
-            </div>
-            <div class="hero-bottom-text-container">
-                <div class="subtitle-hero-paragraph-white">Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som tradisjonelle rengjøringsmidler.<br/>Mer skånsomt og <strong>miljøvennlig</strong>.</div>
-            </div>
-            <div class="mobile-button-container">
-                <a href="#testimonial" class="down-hero-button">↓</a>
-                <a href="#testimonial" class="down-hero-button-mobile">↓</a>
-            </div>
+    <!-- Hero Video Section -->
+    <section class="hero-video">
+        <video autoplay loop muted playsinline>
+            <source src="video/hero.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Rent har fått en<br>ny betydning.</h1>
+            <p class="hero-description">Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som tradisjonelle rengjøringsmidler.<br>Mer skånsomt og <strong>miljøvennlig</strong>.</p>
         </div>
-    </div>
-</div>
+        
+        <div class="scroll-down">
+            <a href="#testimonial">↓</a>
+        </div>
+    </section>
 
-<!-- Testimonial Section -->
-<section id="testimonial" class="testimonial-section">
-    <div class="testimonial-container">
-        <div class="testimonial-content-wrapper">
-            <h2 class="subtitle-blue">Kan miljøvennlig også være lønnsomt?</h2>
-            <p class="subtitle-paragraph-home">Hva har <span class="medium-span">Forsvaret</span>, <span class="medium-span">Thon-gruppen</span>, og <span class="medium-span">Stjørdal kommune</span> til felles? <br/>De har alle valgt en mer effektiv, miljøvennlig, og kostnadsbesparende rengjøringsløsning.<br/>Med Cleanzone sier du farvel til dyrt og komplisert renhold, og hei til en enklere og grønnere hverdag!</p>
-            <div class="testimonial-grid">
-                <div class="testimonial-item-card">
-                    <img src="img/66a9391fb0c73849881e71fc_Spraybottle-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                    <h3 class="testimonial-heading">Alt-i-ett produkt</h3>
+    <!-- Testimonial Section -->
+    <section id="testimonial">
+        <h2 class="section-title">Kan miljøvennlig også være lønnsomt?</h2>
+        <p class="section-subtitle">Hva har <strong>Forsvaret</strong>, <strong>Thon-gruppen</strong>, og <strong>Stjørdal kommune</strong> til felles? De har alle valgt en mer effektiv, miljøvennlig, og kostnadsbesparende rengjøringsløsning. Med Cleanzone sier du farvel til dyrt og komplisert renhold, og hei til en enklere og grønnere hverdag!</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-icon">
+                    <img src="img/66a9391fb0c73849881e71fc_Spraybottle-blue.svg" alt="Alt-i-ett">
                 </div>
-                <div class="testimonial-item-card">
-                    <img src="img/66a9391fb0c73849881e71fa_Graph-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                    <h3 class="testimonial-heading">Kostnadsbesparende</h3>
+                <h3>Alt-i-ett produkt</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-icon">
+                    <img src="img/66a9391fb0c73849881e71fa_Graph-blue.svg" alt="Kostnadsbesparende">
                 </div>
-                <div class="testimonial-item-card">
-                    <img src="img/66a9391fb0c73849881e71fb_Recycle-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                    <h3 class="testimonial-heading">Bra for miljøet</h3>
+                <h3>Kostnadsbesparende</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-icon">
+                    <img src="img/66a9391fb0c73849881e71fb_Recycle-blue.svg" alt="Bra for miljøet">
                 </div>
-                <div class="testimonial-item-card-dt">
-                    <img src="img/679bc26768b6a87ba84bce28_Group 68-3.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                    <h3 class="testimonial-heading">Bra for deg</h3>
+                <h3>Bra for miljøet</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-icon">
+                    <img src="img/679bc26768b6a87ba84bce28_Group 68-3.svg" alt="Bra for deg">
                 </div>
-                <div class="testimonial-item-card">
-                    <img src="img/66a9391fb0c73849881e71f9_Cleaning-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                    <h3 class="testimonial-heading">Enklere rengjøring</h3>
+                <h3>Bra for deg</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-icon">
+                    <img src="img/66a9391fb0c73849881e71f9_Cleaning-blue.svg" alt="Enklere rengjøring">
                 </div>
+                <h3>Enklere rengjøring</h3>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Services Section -->
-<section id="service" class="services-section">
-    <div class="services-centering">
-        <div class="services-wrapper">
-            <h2 class="subtitle-smaller-blue">Våre tjenester</h2>
-            <div class="services-stack">
-                <div class="left-services-cell">
-                    <h2 class="sub-hero-image-title">Cleanzone<br/>Service</h2>
-                    <p class="sub-hero-image-paragraph-services">Din partner i renhold av bygningsmasse. Fra fasaderens til rens av varmepumpe.</p>
-                    <div class="bottom-container">
-                        <div class="bottom-button-container-services">
-                            <a href="#service-detail" class="read-more-button-product">Les mer</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-services-cell">
-                    <h2 class="sub-hero-image-title">Ozonvanns-<br/>pakker</h2>
-                    <p class="sub-hero-image-paragraph-services">Våre beste pakker for levering<br/>av ozonvannsutstyr og tjenester.</p>
-                    <div class="bottom-container">
-                        <div class="bottom-button-container-services">
-                            <a href="#pakker" class="read-more-button-product">Les mer</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    <section id="service">
+        <h2 class="section-title">Våre tjenester</h2>
+        <div class="services-grid">
+            <div class="service-card left">
+                <h2>Cleanzone<br>Service</h2>
+                <p>Din partner i renhold av bygningsmasse. Fra fasaderens til rens av varmepumpe.</p>
+                <a href="#service-detail" class="btn">Les mer</a>
+            </div>
+            <div class="service-card right">
+                <h2>Ozonvanns-<br>pakker</h2>
+                <p>Våre beste pakker for levering av ozonvannsutstyr og tjenester.</p>
+                <a href="#pakker" class="btn">Les mer</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Text and Graphics Section -->
-<section id="om-ozonvann" class="text-and-graphics-section">
-    <div class="colored-area-polished-light-blue-graphics">
-        <div class="colored-area-centering">
-            <div class="colored-area-content-wrapper-graphics">
-                <div class="text-area-graphics">
-                    <h2 class="subtitle-smaller-blue-np">Ozonvann</h2>
-                    <p class="cbg-colored-subscript">Natur møter teknologi</p>
-                    <p class="subtitle-lowered-image-paragraph-additional">Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som vanlige kunstige rengjøringsmidler. Mer skånsomt og <strong>miljøvennlig</strong>.<br/>Når ozonvannet har gjort jobben sin, omdannes det raskt til helt <strong>vanlig vann</strong> og oksygen, uten å etterlate spor i naturen.</p>
-                    <p class="subtitle-lowered-image-paragraph-additional"><br/><strong><br/>Et naturlig, trygt og effektivt<br/>alternativ for rengjøring – på lag med </strong><span><strong>naturen</strong></span><strong>.<br/></strong>‍<br/>‍</p>
-                    <div class="button-and-icon-container-product-graphics">
-                        <a href="#om-ozonvann-detail" class="read-more-button-product-whiter">Lær mer om ozonvann</a>
-                    </div>
-                </div>
-                <div class="graphics-grid">
-                    <div class="graphics-div">
-                        <img src="img/67d2bf81452e1346019f82ff_Regnskyer p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2b7253aedf05484966_Bærekraft hånd p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2b89c03429df24932b_Jordklode p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2beb4f433a38a301dc_Vaske henda p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/67d2bf8199e4e95a990c3be8_Hav p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2b9d84055845d08704_Bestikk p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2b919eb86cac7cd876_Skoger p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/679bce2bdf4869e728998f10_Kran p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                    <div class="graphics-div">
-                        <img src="img/67d2bf81996293bf4737a7e5_Cleanzone eco p.svg" loading="lazy" alt="" class="color-graphic"/>
-                    </div>
-                </div>
+    <!-- Graphics Section -->
+    <section id="om-ozonvann" class="graphics-section">
+        <div class="graphics-content">
+            <h2 class="section-title">Ozonvann</h2>
+            <p class="section-subtitle">Natur møter teknologi</p>
+            <p>Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som vanlige kunstige rengjøringsmidler. Mer skånsomt og <strong>miljøvennlig</strong>. Når ozonvannet har gjort jobben sin, omdannes det raskt til helt <strong>vanlig vann</strong> og oksygen, uten å etterlate spor i naturen.</p>
+            <p><strong>Et naturlig, trygt og effektivt alternativ for rengjøring – på lag med naturen.</strong></p>
+            <a href="#om-ozonvann-detail" class="btn" style="margin-top: 2rem;">Lær mer om ozonvann</a>
+        </div>
+        
+        <div class="graphics-grid">
+            <div class="graphics-item">
+                <img src="img/67d2bf81452e1346019f82ff_Regnskyer p.svg" alt="Regnskyer" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2b7253aedf05484966_Bærekraft hånd p.svg" alt="Bærekraft" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2b89c03429df24932b_Jordklode p.svg" alt="Jordklode" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2beb4f433a38a301dc_Vaske henda p.svg" alt="Vaske henda" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/67d2bf8199e4e95a990c3be8_Hav p.svg" alt="Hav" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2b9d84055845d08704_Bestikk p.svg" alt="Bestikk" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2b919eb86cac7cd876_Skoger p.svg" alt="Skoger" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/679bce2bdf4869e728998f10_Kran p.svg" alt="Kran" style="width: 100%;">
+            </div>
+            <div class="graphics-item">
+                <img src="img/67d2bf81996293bf4737a7e5_Cleanzone eco p.svg" alt="Cleanzone eco" style="width: 100%;">
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Sub Hero Section - Forest -->
-<section class="sub-hero-section">
-    <div class="sub-hero-image-container-forest">
-        <h2 class="sub-hero-image-title">En investering<br/>for fremtiden</h2>
-        <div class="bottom-button-container">
-            <a href="#baerekraft" class="read-more-button-inverse">Les hvorfor</a>
+    <!-- Numbers Section -->
+    <section>
+        <h2 class="section-title">Fordeler som Cleanzone</h2>
+        <div class="numbers-grid">
+            <div class="number-card light-blue">
+                <div class="number">300</div>
+                <div class="label">Antall kunder betjent</div>
+                <div class="note">Siden 2020</div>
+            </div>
+            <div class="number-card pink">
+                <div class="number">87%</div>
+                <div class="label">Vann spart</div>
+                <div class="note">sammenliknet med andre rengjøringsmetoder*</div>
+            </div>
+            <div class="number-card yellow">
+                <div class="number">10k</div>
+                <div class="label">Kr spart per 100L</div>
+                <div class="note">sammenliknet med tradisjonelle kjemikalier*</div>
+            </div>
+            <div class="number-card dark-blue">
+                <div class="number">100k</div>
+                <div class="label">Kvm rengjort</div>
+                <div class="note">antall kvm rengjort av Cleanzone service og våre droner*</div>
+            </div>
+            <div class="number-card green">
+                <div class="number">91%</div>
+                <div class="label">CO2 spart</div>
+                <div class="note">sammenliknet med tradisjonelle kjemikalier*</div>
+            </div>
+            <div class="number-card orange">
+                <div class="number">93%</div>
+                <div class="label">Emballasje spart</div>
+                <div class="note">sammenliknet med tradisjonelle kjemikalier*</div>
+            </div>
         </div>
-        <p class="sub-hero-image-paragraph">Ozonvannsteknologi er ikke<br/>bare smart for lommeboken,<br/>men også for miljøet!</p>
-    </div>
-</section>
+    </section>
 
-<!-- Services Section Mobile -->
-<section class="services-section-mobile">
-    <div class="services-centering">
-        <div class="services-wrapper">
-            <h2 class="subtitle-smaller-blue">Våre tjenester</h2>
-            <div class="services-stack">
-                <div class="left-services-cell">
-                    <div class="services-text-container">
-                        <h2 class="sub-hero-image-title-white">Cleanzone<br/>Service</h2>
-                        <p class="sub-hero-image-paragraph-services-white">Din partner i renhold av bygningsmasse. Fra fasaderens til rens av varmepumpe.</p>
-                    </div>
-                    <div class="services-button-container">
-                        <a href="#service-detail" class="right-hero-button">→</a>
-                    </div>
-                </div>
-                <div class="right-services-cell">
-                    <div class="services-text-container">
-                        <h2 class="sub-hero-image-title-white">Ozonvannspakker</h2>
-                        <p class="sub-hero-image-paragraph-services-white">Våre beste pakker for levering av ozonvannsutstyr og tjenester.</p>
-                    </div>
-                    <div class="services-button-container">
-                        <a href="#pakker" class="right-hero-button">→</a>
-                    </div>
-                </div>
+    <!-- Customer Logos Section -->
+    <section>
+        <h2 class="section-title">Våre kunder</h2>
+        <div class="customer-slider">
+            <div class="customer-track">
+                <!-- Customer logos will be duplicated for infinite scroll -->
+                <div class="customer-item"><img src="img/67780d7fb805b8d80a1badba_Property 1=Default.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/677818cc4bbc694dc2d86891_Property 1=Variant3-2.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/6778195d964a7d7e9ea97d19_Property 1=Default-3.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/6778199a966a362acb07bd18_Property 1=Default-2.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/677819cc68b35dd32932a3b2_Property 1=Default-4.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/67781a472546012478d358b9_Property 1=Default-5.svg" alt="Customer"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="customer-item"><img src="img/67780d7fb805b8d80a1badba_Property 1=Default.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/677818cc4bbc694dc2d86891_Property 1=Variant3-2.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/6778195d964a7d7e9ea97d19_Property 1=Default-3.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/6778199a966a362acb07bd18_Property 1=Default-2.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/677819cc68b35dd32932a3b2_Property 1=Default-4.svg" alt="Customer"></div>
+                <div class="customer-item"><img src="img/67781a472546012478d358b9_Property 1=Default-5.svg" alt="Customer"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Colored BG Section - Mobile -->
-<section class="colored-bg-section">
-    <div class="text-container">
-        <h2 class="subtitle-smaller-blue-cbg">Ozonvann</h2>
-        <p class="cbg-colored-subscript">Natur møter teknologi</p>
-        <p class="sub-hero-image-paragraph">Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som vanlige kunstige rengjøringsmidler. Mer skånsomt og <strong>miljøvennlig</strong>. Når ozonvannet har gjort jobben sin, omdannes det raskt til helt <strong>vanlig vann</strong> og oksygen, uten å etterlate spor i naturen.<br/><strong><br/>Et naturlig, trygt og effektivt alternativ for rengjøring – på lag med </strong><span><strong>naturen</strong></span><strong>.</strong></p>
-        <div class="sub-hero-image-bottom">
-            <a href="#om-ozonvann-detail" class="colored-bg-button-bottom-mobile">Les mer</a>
+    <!-- Testimonials Section -->
+    <section>
+        <h2 class="section-title">Tilbakemeldinger</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item light">
+                <img src="img/67cb06c754be2d8b3ac15ad7_Group 162.png" alt="Clarion Hotel" class="testimonial-image">
+                <div class="testimonial-content">
+                    <div class="testimonial-header">
+                        <img src="img/67cb0721f782f36d245a0ca6_Group 161.svg" alt="Logo">
+                        <h3>Clarion Hotel</h3>
+                    </div>
+                    <p class="testimonial-text"><em>Vi elsker at ozonvannsproduktene fra Cleanzone er trygge for både kloden, våre ansatte og ikke minst gjestene våre. En vinn-vinn-situasjon, om du spør oss.</em></p>
+                </div>
+            </div>
+            
+            <div class="testimonial-item dark">
+                <img src="img/67cb06c765bb5672a7204359_image 45-2.png" alt="Sommerro" class="testimonial-image">
+                <div class="testimonial-content">
+                    <div class="testimonial-header">
+                        <img src="img/67c4bfedc1702dac2e42f816_Group 161.svg" alt="Logo">
+                        <h3 class="white">Sommerro</h3>
+                    </div>
+                    <p class="testimonial-text"><em>Jobb med stabilisert ozonvann gjør dagene til renhold lettere. Med tanke på helse og miljø er jeg kjempe glad at vi kan tilby våre ansatte et så miljøvennlig produkt til daglig rengjøring av hotellet.</em></p>
+                </div>
+            </div>
+            
+            <div class="testimonial-item light">
+                <img src="img/67cb06c7458fdb534f223667_image 45-3.png" alt="Strawberry" class="testimonial-image">
+                <div class="testimonial-content">
+                    <div class="testimonial-header">
+                        <img src="img/67cb072125f37c4c79da8bbf_Group 160.svg" alt="Logo">
+                        <h3>Strawberry</h3>
+                    </div>
+                    <p class="testimonial-text"><em>Vi er veldig fornøyd med det stabiliserte ozonvannet. Vanskelige flekker som makeup i dusj på vegger og gulv gikk ikke bort med vanlig skrubb men det stabiliserte ozonvannet gikk alt enkelt bort.</em></p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="graphics-grid">
-        <div class="graphics-div">
-            <img src="img/679bce2b7253aedf05484966_Bærekraft hånd p.svg" loading="lazy" alt="" class="color-graphic"/>
-        </div>
-        <div class="graphics-div">
-            <img src="img/67d2bf8199e4e95a990c3be8_Hav p.svg" loading="lazy" alt="" class="color-graphic"/>
-        </div>
-        <div class="graphics-div">
-            <img src="img/679bce2bdf4869e728998f10_Kran p.svg" loading="lazy" alt="" class="color-graphic"/>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Sub Hero Section Mobile - Future -->
-<section class="sub-hero-section-mobile">
-    <div class="sub-hero-image-future-container">
-        <div class="sub-hero-image-bottom-container">
-            <h2 class="sub-hero-image-title-white">Investering i<br/>fremtiden</h2>
-            <p class="sub-hero-image-paragraph-white">Ozonvann er ikke<br/>bare smart for<br/> lommeboken, men<br/>også for miljøet</p>
+    <!-- Two Column Values Section -->
+    <section>
+        <h2 class="section-title">Våre grunnpillarer</h2>
+        <div class="two-column-grid">
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089d888476dc6c679563_Frame 254.svg" alt="Reduksjonsgaranti">
+                </div>
+                <div class="two-column-content">
+                    <h3>Reduksjonsgaranti</h3>
+                    <p>Garantert reduksjon av kjemikalier, personalkostnad, papp og plastemballasje, CO2-utslipp og opplærings og administrasjonskostnader.</p>
+                </div>
+            </div>
+            
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089d6cca4689cc5d5c4f_Frame 254-1.svg" alt="Alt-i-ett">
+                </div>
+                <div class="two-column-content">
+                    <h3>Alt-i-ett</h3>
+                    <p>Vi holder deg alltid ett skritt foran med service, frakt, vedlikehold og oppgraderinger inkludert i våre pakker. Du er da sikret det beste markedet har å tilby med våre pakker!</p>
+                </div>
+            </div>
+            
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089cb90313b9f85531e2_Frame 254-2.svg" alt="Fornøydhetsgaranti">
+                </div>
+                <div class="two-column-content">
+                    <h3>Fornøydhetsgaranti</h3>
+                    <p>Vi er så sikre på effektiviteten av våre pakker at vi tilbyr en 3-måneders fornøydhetsgaranti. Er du ikke fornøyd krediterer vi alt tilbake, og demonterer eventuelt montert utstyr.</p>
+                </div>
+            </div>
+            
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089c9c79d4573614d1dc_Frame 254-3.svg" alt="Bærekraftig">
+                </div>
+                <div class="two-column-content">
+                    <h3>Bærekraftig</h3>
+                    <p>Vi leverer pakker der bærekraft og utslippsfrie løsninger står i sentrum. Pakkene bidrar til at dere kan produsere deres egne rengjøringsmidler lokalt.</p>
+                </div>
+            </div>
+            
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089dca1771d44b20e10a_Frame 254-4.svg" alt="Administrasjonsfritt">
+                </div>
+                <div class="two-column-content">
+                    <h3>Administrasjonsfritt</h3>
+                    <p>For første gang kan dere oppleve å ha det tilnærmet administrasjonsfritt knyttet til deres rengjøring, samtidig som dere har full oversikt over kostnader og lagerbeholdning!</p>
+                </div>
+            </div>
+            
+            <div class="two-column-item">
+                <div class="two-column-icon">
+                    <img src="img/67be089c8488c0c369013a37_Frame 254-5.svg" alt="Forutsigbart">
+                </div>
+                <div class="two-column-content">
+                    <h3>Forutsigbart</h3>
+                    <p>Med alt av innhold og kostnader inkludert i en fast månedspris får dere en unik forutsigbarhet knyttet til deres rengjøring. Aldri før har oversikten vært bedre!</p>
+                </div>
+            </div>
         </div>
-        <div class="product-button-container-sp">
-            <a href="#baerekraft" class="right-hero-button">→</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Numbers Section -->
-<section class="numbers-section">
-    <div class="numbers-centering">
-        <div class="numbers-wrapper">
-            <h2 class="subtitle-smaller-blue">Fordeler som Cleanzone</h2>
-            <div class="numbers-container">
-                <div class="numbers-grid">
-                    <div class="numbers-card-lb">
-                        <div class="numbers-card-top-left">
-                            <p class="sub-hero-image-paragraph-numbers">Antall kunder betjent</p>
-                            <p class="sub-hero-image-numbers">300</p>
-                            <p class="sub-hero-image-bottom-text">Siden 2020</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49da329da273c956d665_Frame 310.svg" loading="lazy" alt="" class="numbers-top-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-pi">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Vann spart</p>
-                            <p class="sub-hero-image-numbers">87%</p>
-                            <p class="sub-hero-image-bottom-text">sammenliknet med andre rengjøringsmetoder*</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49da4373e6b7cd787fb6_Kran p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-ye">
-                        <div class="numbers-card-middle-left">
-                            <p class="sub-hero-image-paragraph-numbers">Kr spart per 100L</p>
-                            <p class="sub-hero-image-numbers">10k</p>
-                            <p class="sub-hero-image-bottom-middle-text">sammenliknet med tradisjonelle kjemikalier*</p>
-                        </div>
-                        <div class="numbers-card-middle-right">
-                            <img src="img/67bf49da1cb8ba1a89b24bb8_Kostandeffektiv pikt.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-db">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Kvm rengjort</p>
-                            <p class="sub-hero-image-numbers">100k</p>
-                            <p class="sub-hero-image-bottom-text">antall kvm rengjort av Cleanzone service og våre droner*</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49daba744670d0dc8229_Bygning pikt.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-gr">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">CO<sub>2</sub> spart</p>
-                            <p class="sub-hero-image-numbers">91%</p>
-                            <p class="sub-hero-image-bottom-text">sammenliknet med tradisjonelle kjemikalier*</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49daafc1ce349821b3e9_Jordklode p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-or">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Emballasje spart</p>
-                            <p class="sub-hero-image-numbers">93%</p>
-                            <p class="sub-hero-image-bottom-text">sammenliknet med tradisjonelle kjemikalier*</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49daafc1ce349821b3e9_Jordklode p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
+    <!-- News Section -->
+    <section id="nyheter">
+        <h2 class="section-title">Nyheter</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="img/6718d0ed0de6bb20e465295d_Skjermbilde 2024-04-23 kl. 17.31 1.png" alt="Cleanzone til topps" class="news-image">
+                <div class="news-content">
+                    <h3>Cleanzone til topps i vinterkonferansen 2018</h3>
+                    <p>Cleanzone har mottatt en prestisjefylt pris på Vinterkonferansen (VK) til Strawberry.</p>
+                    <a href="#nyhet-detail" class="btn">Les mer</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <img src="img/6718d0de1021c08545f0a212_bilde -20240305-143224-597bc619 9.png" alt="Cleanzone" class="news-image">
+                <div class="news-content">
+                    <h3>Cleanzone til topps i vinterkonferansen 2018</h3>
+                    <p>Cleanzone har mottatt en prestisjefylt pris på Vinterkonferansen (VK) til Strawberry.</p>
+                    <a href="#nyhet-detail" class="btn">Les mer</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Numbers Section Mobile -->
-<section class="numbers-section-mobile">
-    <div class="numbers-centering">
-        <div class="numbers-wrapper">
-            <h2 class="subtitle-smaller-blue">Noen tall vi er stolte av</h2>
-            <div class="numbers-container">
-                <div class="numbers-grid">
-                    <div class="numbers-card-lb">
-                        <div class="numbers-card-top-left">
-                            <p class="sub-hero-image-paragraph-numbers">Antall kunder</p>
-                            <p class="sub-hero-image-numbers">300</p>
-                            <img src="img/67bf7162ca7886d327b2034f_Cleanzone eco p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf6fa0cf35769be66963ac_Frame 310.svg" loading="lazy" alt="" class="numbers-top-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-pi">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">CO<sub>2</sub> spart</p>
-                            <p class="sub-hero-image-numbers">91%</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49daafc1ce349821b3e9_Jordklode p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-or">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Vann spart</p>
-                            <p class="sub-hero-image-numbers">87%</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf7162fb8393f93b0cbfbe_Cleanzone care p.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-db">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Kvm rengjort</p>
-                            <p class="sub-hero-image-numbers">100k</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf49daba744670d0dc8229_Bygning pikt.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
-                    <div class="numbers-card-gr">
-                        <div class="numbers-card-left">
-                            <p class="sub-hero-image-paragraph-numbers">Emballasje spart</p>
-                            <p class="sub-hero-image-numbers">93%</p>
-                        </div>
-                        <div class="numbers-card-right">
-                            <img src="img/67bf71622ceba0647cd0afb3_Group.svg" loading="lazy" alt="" class="numbers-graphic"/>
-                        </div>
-                    </div>
+    <!-- Contact Section -->
+    <section id="kontakt" style="padding-top: 0;">
+        <div class="contact-section">
+            <h2>Ta steget mot en renere og grønnere fremtid i dag - Kontakt oss for å finne din ideelle rengjøringsløsning.</h2>
+            <div class="contact-btn">
+                <a href="#kontakt-oss" class="btn">Kontakt oss</a>
+                <div class="headset-icon">
+                    <img src="img/66fc02b05625eb036841791e_Headset_open.svg" alt="Headset" style="width: 9vw;">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Customers Section -->
-<section class="text-area-section-product">
-    <div class="text-area-centering">
-        <div class="text-area-wrapper">
-            <h2 class="subtitle-smaller-blue">Våre kunder</h2>
-        </div>
-    </div>
-</section>
-
-<!-- Rotating Customers Section -->
-<section class="rotating-customers-section">
-    <div class="section-logo">
-        <div class="page-padding s0">
-            <div class="container-large">
-                <div class="padding-vertical padding-xxlarge">
-                    <div class="logo_component-slider">
-                        <!-- Customer 1 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67780d7fb805b8d80a1badba_Property 1=Default.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/6778169b5933e816d216b692_Property 1=Variant3.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 2 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/677818cc4bbc694dc2d86891_Property 1=Variant3-2.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/677818eb8524160612c19485_Property 1=Variant3-3.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 3 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/6778195d964a7d7e9ea97d19_Property 1=Default-3.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/6778196bdc89e08dcce0bcb8_Property 1=Variant3-4.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 4 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/6778199a966a362acb07bd18_Property 1=Default-2.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/677819a79915e66d31120839_Property 1=Variant3-5.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 5 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/677819cc68b35dd32932a3b2_Property 1=Default-4.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67781a0266636c8605102aa2_Property 1=Variant3-6.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 6 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67781a472546012478d358b9_Property 1=Default-5.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67781a3c43cf5cdd784d92ac_Property 1=Variant3-7.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 7 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c590d84c25a330a0294254_Property 1=Default-6.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c590f47057bb4d0bc9f215_Property 1=Variant3-8.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 8 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c5914971637dc718abc533_Property 1=Default-7.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c591602ad3072f8cbbf4ad_Property 1=Variant3-9.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 9 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c5938387988783b1cdf41c_Property 1=Default-8.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c593a28735c102dd654c8a_Property 1=Variant3-10.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 10 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c593be915d55364f440de2_Property 1=Default-9.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c593cfaf79cfbb7b15ce5d_Property 1=Variant3-11.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 11 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c593f3267407a156d825c4_Property 1=Default-10.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c594098735c102dd65e9a9_Property 1=Variant3-12.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 12 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c596126f8870d1c890e7f4_Property 1=Default-11.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c59626c1a24c2e551b11e5_Property 1=Variant3-13.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 13 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c5964809c3d1134e50331d_Property 1=Default-12.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c5964d3491d616686507f6_Property 1=Variant3-14.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <!-- Customer 14 -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67c5967ac5cd85dd702d7bca_Property 1=Default-13.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c5967f918650c5e0f36cdf_Property 1=Variant3-15.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Teamet</h4>
+                <ul class="footer-links">
+                    <li><a href="#kontakt">Kontakt oss</a></li>
+                    <li><a href="#team">Om oss</a></li>
+                    <li><a href="#kundeomtaler">Kundeomtaler</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Produkter</h4>
+                <ul class="footer-links">
+                    <li><a href="#pakker">Ozonvannspakker</a></li>
+                    <li><a href="#service">Cleanzone Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Generelt</h4>
+                <ul class="footer-links">
+                    <li><a href="#baerekraft">Bærekraft</a></li>
+                    <li><a href="#nyheter">Nyheter</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="section-logo">
-        <div class="page-padding s0">
-            <div class="container-large">
-                <div class="padding-vertical padding-xxlarge">
-                    <div class="logo_component-slider-reverse">
-                        <!-- Repeat customers for reverse scroll -->
-                        <div class="rotating-customer-card">
-                            <img src="img/67780d7fb805b8d80a1badba_Property 1=Default.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/6778169b5933e816d216b692_Property 1=Variant3.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/677818cc4bbc694dc2d86891_Property 1=Variant3-2.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/677818eb8524160612c19485_Property 1=Variant3-3.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/6778195d964a7d7e9ea97d19_Property 1=Default-3.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/6778196bdc89e08dcce0bcb8_Property 1=Variant3-4.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/6778199a966a362acb07bd18_Property 1=Default-2.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/677819a79915e66d31120839_Property 1=Variant3-5.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/677819cc68b35dd32932a3b2_Property 1=Default-4.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67781a0266636c8605102aa2_Property 1=Variant3-6.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/67781a472546012478d358b9_Property 1=Default-5.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67781a3c43cf5cdd784d92ac_Property 1=Variant3-7.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/67c590d84c25a330a0294254_Property 1=Default-6.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c590f47057bb4d0bc9f215_Property 1=Variant3-8.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                        <div class="rotating-customer-card">
-                            <img src="img/67c5914971637dc718abc533_Property 1=Default-7.svg" loading="lazy" width="218" alt="" class="rotating-customer-default"/>
-                            <img src="img/67c591602ad3072f8cbbf4ad_Property 1=Variant3-9.svg" loading="lazy" alt="" class="rotating-customer-hovered"/>
-                        </div>
-                    </div>
-                </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" alt="Cleanzone" style="width: 200px;">
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Response Slider Section Mobile -->
-<section class="response-slider-section-mobile">
-    <h2 class="subtitle-smaller-blue">Tilbakemeldinger</h2>
-    <div class="response-slider-container-mobile">
-        <div class="response-slider-wrapper">
-            <div class="response-slider-mobile">
-                <div class="response-slider-mask">
-                    <div class="response-slide">
-                        <div class="response-slide-content-wrapper-mobile">
-                            <div class="response-card-lb">
-                                <img src="img/67cb06c754be2d8b3ac15ad7_Group 162.png" loading="lazy" alt="" class="response-card-image"/>
-                                <div class="response-card-lower">
-                                    <div class="response-card-title-container">
-                                        <img src="img/67cb0721f782f36d245a0ca6_Group 161.svg" loading="lazy" alt="" class="response-card-logo"/>
-                                        <div class="response-card-title">Clarion Hotel</div>
-                                    </div>
-                                    <div class="response-card-text"><em>Vi elsker at ozonvannsproduktene fra Cleanzone er trygge for både kloden, våre ansatte og ikke minst gjestene våre. En vinn-vinn-situasjon, om du spør oss.</em><br/></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="response-slide">
-                        <div class="response-slide-content-wrapper-mobile">
-                            <div class="response-card-db">
-                                <img src="img/67cb06c765bb5672a7204359_image 45-2.png" loading="lazy" alt="" class="response-card-image"/>
-                                <div class="response-card-lower">
-                                    <div class="response-card-title-container">
-                                        <img src="img/67c4bfedc1702dac2e42f816_Group 161.svg" loading="lazy" alt="" class="response-card-logo"/>
-                                        <div class="response-card-title-white">Sommerro</div>
-                                    </div>
-                                    <div class="response-card-text-white"><em>Jobb med stabilisert ozonvann gjør dagene til renhold lettere. Med tanke på helse og miljø er jeg kjempe glad at vi kan tilby våre ansatte et så miljøvennlig produkt til daglig rengjøring av hotellet.</em></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="response-slide">
-                        <div class="response-slide-content-wrapper-mobile">
-                            <div class="response-card-lb">
-                                <img src="img/67cb06c7458fdb534f223667_image 45-3.png" loading="lazy" alt="" class="response-card-image"/>
-                                <div class="response-card-lower">
-                                    <div class="response-card-title-container">
-                                        <img src="img/67cb072125f37c4c79da8bbf_Group 160.svg" loading="lazy" alt="" class="response-card-logo"/>
-                                        <div class="response-card-title">Strawberry</div>
-                                    </div>
-                                    <div class="response-card-text"><em>Vi er veldig fornøyd med det stabiliserte ozonvannet. Vanskelige flekker som makeup i dusj på vegger og gulv gikk ikke bort med vanlig skrubb men det stabiliserte ozonvannet gikk alt enkelt bort.</em></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-left-switch">←</div>
-                <div class="slider-right-switch">→</div>
-                <div class="response-slider-nav"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sub Hero Section - Team -->
-<section class="sub-hero-section">
-    <div class="sub-hero-image-container">
-        <h2 class="sub-hero-image-title">Team<br/>Cleanzone</h2>
-        <div class="bottom-button-container">
-            <a href="#team" class="read-more-button-inverse">Møt teamet</a>
-        </div>
-        <p class="sub-hero-image-paragraph">Teamet som endrer<br/>måten Norge rengjør på!</p>
-    </div>
-</section>
-
-<!-- Sub Hero Section Mobile - Team -->
-<section class="sub-hero-section-mobile">
-    <div class="sub-hero-image-container-team">
-        <div class="sub-hero-image-bottom-container">
-            <h2 class="sub-hero-image-title-white">Team Cleanzone</h2>
-            <p class="sub-hero-image-paragraph-white">Teamet som<br/>revolusjonerer<br/>måten Norge<br/>rengjør på!</p>
-        </div>
-        <div class="product-button-container-bp">
-            <a href="#team" class="right-hero-button">→</a>
-        </div>
-    </div>
-</section>
-
-<!-- Two Column Testimonial Section -->
-<section class="two-column-testimonial-section">
-    <div class="two-column-testimonial-centering">
-        <div class="two-column-testimonial-content-wrapper">
-            <h2 class="subtitle-smaller-blue">Våre grunnpillarer</h2>
-            <div class="two-column-testimonial-grid">
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089d888476dc6c679563_Frame 254.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Reduksjonsgaranti</h3>
-                        <p class="two-column-testimonial-text">Garantert reduksjon av kjemikalier, personalkostnad, papp og plastemballasje, CO2-utslipp og opplærings og administrasjonskostnader.</p>
-                    </div>
-                </div>
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089d6cca4689cc5d5c4f_Frame 254-1.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Alt-i-ett</h3>
-                        <p class="two-column-testimonial-text">Vi holder deg alltid ett skritt foran med service, frakt, vedlikehold og oppgraderinger inkludert i våre pakker. Du er da sikret det beste markedet har å tilby med våre pakker!</p>
-                    </div>
-                </div>
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089cb90313b9f85531e2_Frame 254-2.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Fornøydhetsgaranti</h3>
-                        <p class="two-column-testimonial-text">Vi er så sikre på effektiviteten av våre pakker at vi tilbyr en 3-måneders fornøydhetsgaranti. Er du ikke fornøyd krediterer vi alt tilbake, og demonterer eventuelt montert utstyr.</p>
-                    </div>
-                </div>
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089c9c79d4573614d1dc_Frame 254-3.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Bærekraftig</h3>
-                        <p class="two-column-testimonial-text">Vi leverer pakker der bærekraft og utslippsfrie løsninger står i sentrum. Pakkene bidrar til at dere kan produsere deres egne rengjøringsmidler lokalt.</p>
-                    </div>
-                </div>
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089dca1771d44b20e10a_Frame 254-4.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Administrasjonsfritt</h3>
-                        <p class="two-column-testimonial-text">For første gang kan dere oppleve å ha det tilnærmet administrasjonsfritt knyttet til deres rengjøring, samtidig som dere har full oversikt over kostnader og lagerbeholdning!</p>
-                    </div>
-                </div>
-                <div class="two-column-testimonial-item-card">
-                    <img src="img/67be089c8488c0c369013a37_Frame 254-5.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-                    <div class="two-column-testimonial-text-container">
-                        <h3 class="two-column-testimonial-heading">Forutsigbart</h3>
-                        <p class="two-column-testimonial-text">Med alt av innhold og kostnader inkludert i en fast månedspris får dere en unik forutsigbarhet knyttet til deres rengjøring. Aldri før har oversikten vært bedre!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Two Column Testimonial Section Mobile -->
-<section class="two-column-testimonial-section-mobile">
-    <h2 class="subtitle-smaller-blue">Våre grunnverdier</h2>
-    <div class="two-column-testimonial-grid-mobile">
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714e_Alt-i-ett.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Alt-i-ett</h3>
-                <p class="two-column-testimonial-text">Vi holder deg alltid ett skritt foran med service, frakt, vedlikehold og oppgraderinger inkludert i våre pakker.<br/></p>
-            </div>
-        </div>
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714a_Reduksjonsgaranti.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Reduksjonsgaranti</h3>
-                <p class="two-column-testimonial-text">Garantert reduksjon av kjemikalier, personalkostnad, papp og plastemballasje, CO2-utslipp og opplærings og administrasjonskostnader.</p>
-            </div>
-        </div>
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714c_Forutsigbart.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Forutsigbart</h3>
-                <p class="two-column-testimonial-text">Med alt av innhold og kostnader inkludert i en fast månedspris får dere en unik forutsigbarhet knyttet til deres rengjøring. Aldri før har oversikten vært bedre!</p>
-            </div>
-        </div>
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714b_Bærekraftig.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Bærekraftig</h3>
-                <p class="two-column-testimonial-text">Vi leverer pakker der bærekraft og utslippsfrie løsninger står i sentrum. Pakkene bidrar til at dere kan produsere deres egne rengjøringsmidler lokalt.</p>
-            </div>
-        </div>
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714f_Fornøydhetsgaranti.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Fornøydhetsgaranti</h3>
-                <p class="two-column-testimonial-text">Vi er så sikre på effektiviteten av våre pakker at vi tilbyr en 3-måneders fornøydhetsgaranti. Er du ikke fornøyd krediterer vi alt tilbake, og demonterer montert utstyr.</p>
-            </div>
-        </div>
-        <div class="two-column-testimonial-item-card-mobile">
-            <img src="img/66a9391fb0c73849881e714d_Administrasjonsfritt.svg" loading="lazy" alt="" class="two-column-testimonial-round-image"/>
-            <div class="two-column-testimonial-text-container">
-                <h3 class="two-column-testimonial-heading">Administrasjonsfritt</h3>
-                <p class="two-column-testimonial-text">For første gang kan dere oppleve å ha det tilnærmet administrasjonsfritt knyttet til deres rengjøring, samtidig som dere har full oversikt over kostnader og lagerbeholdning!</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Response Slider Section Variant -->
-<section class="response-slider-section-variant">
-    <div class="response-slider-centering">
-        <div class="feedback-slider-wrapper">
-            <h2 class="subtitle-smaller-blue">Tilbakemeldinger fra kunder</h2>
-            <div class="three-view-responses">
-                <div class="response-card-lb">
-                    <img src="img/67cb06c754be2d8b3ac15ad7_Group 162.png" loading="lazy" alt="" class="response-card-image"/>
-                    <div class="response-card-lower">
-                        <div class="response-card-title-container">
-                            <img src="img/67cb0721f782f36d245a0ca6_Group 161.svg" loading="lazy" alt="" class="response-card-logo"/>
-                            <div class="response-card-title">Clarion Hotel</div>
-                        </div>
-                        <div class="response-card-text"><em>Vi elsker at ozonvannsproduktene fra Cleanzone er trygge for både kloden, våre ansatte og ikke minst gjestene våre. En vinn-vinn-situasjon, om du spør oss.</em><br/>‍</div>
-                    </div>
-                </div>
-                <div class="response-card-db">
-                    <img src="img/67cb06c765bb5672a7204359_image 45-2.png" loading="lazy" alt="" class="response-card-image"/>
-                    <div class="response-card-lower">
-                        <div class="response-card-title-container">
-                            <img src="img/67c4bfedc1702dac2e42f816_Group 161.svg" loading="lazy" alt="" class="response-card-logo"/>
-                            <div class="response-card-title-white">Sommero</div>
-                        </div>
-                        <div class="response-card-text-white"><em>Jobb med stabilisert ozonvann gjør dagene til renhold lettere. Med tanke på helse og miljø er jeg kjempe glad at vi kan tilby våre ansatte et så miljøvennlig produkt til daglig rengjøring av hotellet.</em></div>
-                    </div>
-                </div>
-                <div class="response-card-lb">
-                    <img src="img/67cb06c7458fdb534f223667_image 45-3.png" loading="lazy" alt="" class="response-card-image"/>
-                    <div class="response-card-lower">
-                        <div class="response-card-title-container">
-                            <img src="img/67cb072125f37c4c79da8bbf_Group 160.svg" loading="lazy" alt="" class="response-card-logo"/>
-                            <div class="response-card-title">Strawberry</div>
-                        </div>
-                        <div class="response-card-text"><em>Vi er veldig fornøyd med det stabiliserte ozonvannet. Vanskelige flekker som makeup i dusj på vegger og gulv gikk ikke bort med vanlig skrubb men det stabiliserte ozonvannet gikk alt enkelt bort.</em></div>
-                    </div>
-                </div>
-            </div>
-            <div class="read-more-button-container">
-                <a href="#kundeomtaler" class="read-more-button-inverse-variant">Les flere tilbakemeldinger</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- News Section -->
-<section id="nyheter" class="misc-news-section-landing">
-    <div class="misc-news-centering">
-        <div class="misc-news-content-wrapper">
-            <h2 class="subtitle-smaller-blue">Nyheter</h2>
-            <div class="news-collection-list-wrapper">
-                <div class="news-collection-list">
-                    <div class="news-collection-item">
-                        <div class="news-card">
-                            <img src="img/6718d0ed0de6bb20e465295d_Skjermbilde 2024-04-23 kl. 17.31 1.png" loading="lazy" alt="" class="news-image-cell-restricted"/>
-                            <h3 class="news-title">Cleanzone til topps i vinterkonferansen 2018</h3>
-                            <p class="news-paragaph">Cleanzone har mottatt en prestisjefylt pris på Vinterkonferansen (VK) til Strawberry.</p>
-                            <a href="#nyhet-detail" class="read-more-button-b-to-pb">Les mer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-news-collection-list-wrapper">
-                <div class="mobile-news-collection-list">
-                    <div class="mobile-news-collection-item">
-                        <div class="mobile-news-card">
-                            <img src="img/6718d0de1021c08545f0a212_bilde -20240305-143224-597bc619 9.png" loading="lazy" alt="" class="mobile-news-image"/>
-                            <div class="mobile-news-bottom-polished-blue">
-                                <h2 class="subtitle-extra-small-dark-blue">Cleanzone til topps i vinterkonferansen 2018</h2>
-                                <p class="subtitle-heighted-image-paragraph-dark-blue">Cleanzone har mottatt en prestisjefylt pris på Vinterkonferansen (VK) til Strawberry.</p>
-                                <div class="mobile-news-button-container">
-                                    <a href="#nyhet-detail" class="read-more-button-news">Les mer</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="kontakt" class="sub-hero-section">
-    <div class="sub-hero-image-container-smaller">
-        <h1 class="sub-hero-image-title-blue">Ta steget mot en renere og grønnere fremtid i dag - Kontakt oss for å finne din ideelle rengjøringsløsning.</h1>
-        <div class="sub-hero-image-bottom">
-            <a href="#kontakt-oss" class="sub-hero-image-button-bottom">Kontakt oss</a>
-            <div class="headset-svg-container">
-                <img src="img/66fc02b05625eb036841791e_Headset_open.svg" loading="lazy" alt="" class="headset-open"/>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section Mobile -->
-<section class="sub-hero-section-mobile">
-    <div class="sub-hero-image-container-smaller-mobile">
-        <div class="sub-hero-image-top">
-            <h1 class="sub-hero-image-title-blue">Ta steget mot en renere og grønnere fremtid i dag - Kontakt oss for å finne din ideelle rengjøringsløsning.</h1>
-            <div class="headset-svg-container-mobile">
-                <img src="img/66fc02b05625eb036841791e_Headset_open.svg" loading="lazy" alt="" class="headset-open"/>
-            </div>
-        </div>
-        <div class="sub-hero-image-bottom">
-            <a href="#kontakt-oss" class="sub-hero-image-button-bottom-mobile">Kontakt oss</a>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="cleanzone-footer-wrapper">
-    <div class="footer-main-container">
-        <div class="footer-content-centering">
-            <div class="footer-content-wrapper">
-                <div class="footer-mid-section">
-                    <div class="footer-5-column-grid">
-                        <div class="footer-text-container">
-                            <div class="footer-title">Teamet</div>
-                            <ul class="footer-list-wrapper">
-                                <li class="footer-list-item"><a href="#kontakt" class="footer-link">Kontakt oss</a></li>
-                                <li class="footer-list-item"><a href="#team" class="footer-link">Om oss</a></li>
-                                <li class="footer-list-item"><a href="#kundeomtaler" class="footer-link">Kundeomtaler</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-text-container">
-                            <div class="footer-title">Produkter</div>
-                            <ul class="footer-list-wrapper">
-                                <li class="footer-list-item"><a href="#pakker" class="footer-link">Ozonvannspakker</a></li>
-                                <li class="footer-list-item"><a href="#service" class="footer-link">Cleanzone Service</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-text-container">
-                            <div class="footer-title">Generelt</div>
-                            <ul class="footer-list-wrapper">
-                                <li class="footer-list-item"><a href="#baerekraft" class="footer-link">Bærekraft</a></li>
-                                <li class="footer-list-item"><a href="#nyheter" class="footer-link">Nyheter</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer-3-row-grid">
-                        <a href="https://vinterkonferansen.no/" target="_blank" class="sertification-footer-link">
-                            <img src="img/66a9391fb0c73849881e71df_VK-LOGO 1.svg" loading="lazy" alt="Vinterkonferansen" class="footer-logo-image-vk"/>
-                        </a>
-                        <a href="https://www.grontpunkt.no/" target="_blank" class="sertification-footer-link">
-                            <img src="img/66a9391fb0c73849881e71de_Group 130.svg" loading="lazy" alt="Grønt Punkt" class="footer-logo-image-green-point"/>
-                        </a>
-                        <a href="https://www.miljofyrtarn.no/" target="_blank" class="sertification-footer-link">
-                            <img src="img/66a9391fb0c73849881e71e2_image 43.svg" loading="lazy" alt="Miljøfyrtårn" class="footer-logo-image-environment"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="grid-footer-logo-bottom">
-                        <a href="/" aria-current="page" class="footer-logo-wrapper">
-                            <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" loading="lazy" alt="Cleanzone" class="footer-logo-embed"/>
-                        </a>
-                        <div class="footer-social-media-container">
-                            <div class="footer-social-media-grid">
-                                <div class="footer-social-media-text">Følg oss:</div>
-                                <a href="https://www.instagram.com/cleanzoneas/" target="_blank" class="instagram-footer-logo">
-                                    <img src="img/66fbfe4452d63dbea4b8d6c8_Property 1=Default-1.svg" loading="lazy" alt="Instagram" class="footer-social-media-svg"/>
-                                    <img src="img/66fc006d50422872103955c1_Instagram_blue.svg" loading="lazy" alt="Instagram" class="footer-social-media-svg-blue"/>
-                                </a>
-                                <a href="https://www.facebook.com/profile.php?id=61560510337631" target="_blank" class="facebook-footer-logo">
-                                    <img src="img/66fbfe448a6c767c39de20e3_Property 1=Default-2.svg" loading="lazy" alt="Facebook" class="footer-social-media-svg"/>
-                                    <img src="img/66fc006d0b76840b4e1cce9c_Facebook_blue.svg" loading="lazy" alt="Facebook" class="footer-social-media-svg-blue"/>
-                                </a>
-                                <a href="https://www.linkedin.com/company/cleanzone-as/" target="_blank" class="linkedin-footer-logo">
-                                    <img src="img/66fbfe44d50411f697fa1fad_Property 1=Default.svg" loading="lazy" alt="LinkedIn" class="footer-social-media-svg"/>
-                                    <img src="img/66fc006d6c16c21ec5b8d0fe_Linkedin_blue.svg" loading="lazy" alt="LinkedIn" class="footer-social-media-svg-blue"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Footer Mobile -->
-<footer class="cleanzone-footer-wrapper-mobile">
-    <div class="footer-main-container">
-        <div class="footer-mid-section">
-            <div class="footer-5-column-grid-mobile">
-                <div class="footer-text-container">
-                    <div class="footer-title">Teamet</div>
-                    <ul class="footer-list-wrapper">
-                        <li class="footer-list-item"><a href="#kontakt" class="footer-link">Kontakt oss</a></li>
-                        <li class="footer-list-item"><a href="#team" class="footer-link">Om oss</a></li>
-                        <li class="footer-list-item"><a href="#kundeomtaler" class="footer-link">Kundeomtaler</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-container">
-                    <div class="footer-title">Produkter</div>
-                    <ul class="footer-list-wrapper">
-                        <li class="footer-list-item"><a href="#pakker" class="footer-link">Ozonvannspakker</a></li>
-                        <li class="footer-list-item"><a href="#service" class="footer-link">Cleanzone Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-container">
-                    <div class="footer-title">Generelt</div>
-                    <ul class="footer-list-wrapper">
-                        <li class="footer-list-item"><a href="#baerekraft" class="footer-link">Bærekraft</a></li>
-                        <li class="footer-list-item"><a href="#nyheter" class="footer-link">Nyheter</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom-mobile">
-            <div class="footer-logo-and-media-container">
-                <div class="footer-social-media-grid">
-                    <div class="footer-social-media-text">Følg oss:</div>
-                    <a href="https://www.instagram.com/cleanzoneas/" target="_blank" class="instagram-footer-logo">
-                        <img src="img/66fbfe4452d63dbea4b8d6c8_Property 1=Default-1.svg" loading="lazy" alt="Instagram" class="footer-social-media-svg"/>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61560510337631" target="_blank" class="facebook-footer-logo">
-                        <img src="img/66fbfe448a6c767c39de20e3_Property 1=Default-2.svg" loading="lazy" alt="Facebook" class="footer-social-media-svg"/>
-                    </a>
-                    <a href="https://www.linkedin.com/company/cleanzone-as/" target="_blank" class="linkedin-footer-logo">
-                        <img src="img/66fbfe44d50411f697fa1fad_Property 1=Default.svg" loading="lazy" alt="LinkedIn" class="footer-social-media-svg"/>
-                    </a>
-                </div>
-                <a href="/" aria-current="page" class="footer-logo-wrapper-mobile">
-                    <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" loading="lazy" alt="Cleanzone" style="width: 200px;"/>
+            
+            <div class="social-links">
+                <span>Følg oss:</span>
+                <a href="https://www.instagram.com/cleanzoneas/" target="_blank">
+                    <img src="img/66fbfe4452d63dbea4b8d6c8_Property 1=Default-1.svg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61560510337631" target="_blank">
+                    <img src="img/66fbfe448a6c767c39de20e3_Property 1=Default-2.svg" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/cleanzone-as/" target="_blank">
+                    <img src="img/66fbfe44d50411f697fa1fad_Property 1=Default.svg" alt="LinkedIn" class="social-icon">
                 </a>
             </div>
-            <div class="footer-3-row-grid">
-                <a href="https://vinterkonferansen.no/" target="_blank" class="sertification-footer-link">
-                    <img src="img/66a9391fb0c73849881e71df_VK-LOGO 1.svg" loading="lazy" alt="Vinterkonferansen" style="height: 40px;"/>
+            
+            <div class="certificates">
+                <a href="https://vinterkonferansen.no/" target="_blank">
+                    <img src="img/66a9391fb0c73849881e71df_VK-LOGO 1.svg" alt="VK" style="height: 40px;">
                 </a>
-                <a href="https://www.grontpunkt.no/" target="_blank" class="sertification-footer-link">
-                    <img src="img/66a9391fb0c73849881e71de_Group 130.svg" loading="lazy" alt="Grønt Punkt" style="height: 40px;"/>
+                <a href="https://www.grontpunkt.no/" target="_blank">
+                    <img src="img/66a9391fb0c73849881e71de_Group 130.svg" alt="Grønt Punkt" style="height: 40px;">
                 </a>
-                <a href="https://www.miljofyrtarn.no/" target="_blank" class="sertification-footer-link">
-                    <img src="img/66a9391fb0c73849881e71e2_image 43.svg" loading="lazy" alt="Miljøfyrtårn" style="height: 40px;"/>
+                <a href="https://www.miljofyrtarn.no/" target="_blank">
+                    <img src="img/66a9391fb0c73849881e71e2_image 43.svg" alt="Miljøfyrtårn" style="height: 40px;">
                 </a>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- JavaScript -->
-<!-- Webflow JavaScript files -->
-<script src="js/webfont.js" type="text/javascript"></script>
-<script src="js/webflow.schunk.57d5559d2f0cd9f8.js" type="text/javascript"></script>
-<script src="js/webflow.schunk.1e28fc40f077aeb4.js" type="text/javascript"></script>
-<script src="js/webflow.schunk.61b534daaaeddbc7.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+        }
 
-<!-- Mobile Menu Toggle Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-navbar-menu');
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    const closeIcon = document.querySelector('.close-icon');
-    
-    if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', function() {
-            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-                mobileMenu.style.display = 'block';
-                hamburgerIcon.style.display = 'none';
-                closeIcon.style.display = 'block';
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                mobileMenu.style.display = 'none';
-                hamburgerIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
+                navbar.classList.remove('scrolled');
             }
         });
-    }
-    
-    // Close mobile menu on window resize (if window becomes larger)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            if (mobileMenu) mobileMenu.style.display = 'none';
-            if (hamburgerIcon) hamburgerIcon.style.display = 'block';
-            if (closeIcon) closeIcon.style.display = 'none';
-        }
-    });
-});
-</script>
-    <!-- Navbar functionality -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-// Webflow-style navbar functionality
-$(document).ready(function() {
-    // Desktop dropdowns
-    $('.navbar-dropdown-toggle').on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        var $dropdown = $(this).closest('.navbar-dropdown');
-        var $list = $dropdown.find('.navbar-dropdown-list');
-        
-        // Close other dropdowns
-        $('.navbar-dropdown-list').not($list).slideUp(200);
-        
-        // Toggle current dropdown
-        $list.slideToggle(200);
-    });
-    
-    // Close dropdowns when clicking outside
-    $(document).on('click', function(e) {
-        if (!$(e.target).closest('.navbar-dropdown').length) {
-            $('.navbar-dropdown-list').slideUp(200);
-        }
-    });
-    
-    // Mobile menu toggle
-    $('.mobile-menu-button').on('click', function() {
-        $('.mobile-navbar-menu').slideToggle(300);
-        $('.hamburger-icon').toggle();
-        $('.close-icon').toggle();
-    });
-    
-    // Close mobile menu on window resize
-    $(window).on('resize', function() {
-        if ($(window).width() > 768) {
-            $('.mobile-navbar-menu').hide();
-            $('.hamburger-icon').show();
-            $('.close-icon').hide();
-        }
-    });
-    
-    // Smooth scroll for anchor links
-    $('a[href*="#"]').on('click', function(e) {
-        if (this.hash !== '') {
-            e.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function() {
-                window.location.hash = hash;
-            });
-        }
-    });
-});
-</script>
-    
 
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Customer slider duplication check
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.customer-track');
+            if (track) {
+                const items = track.children;
+                if (items.length > 0) {
+                    // Ensure we have enough items for smooth infinite scroll
+                    while (track.scrollWidth < window.innerWidth * 2) {
+                        const clones = Array.from(items).slice(0, items.length / 2);
+                        clones.forEach(item => {
+                            track.appendChild(item.cloneNode(true));
+                        });
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
