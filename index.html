@@ -1,149 +1,502 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="utf-8"/>
-    <title>Cleanzone</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<title>Cleanzone</title>
 
-    <style>
-        /* Force visibility for elements hidden by Webflow animations */
-        .cleanzone-body, .page-wrapper, section, .section, div, h1, h2, h3, p, img {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important;
-        }
-        body { background-color: #000; margin: 0; padding: 0; }
-        .hero-video video { object-fit: cover; width: 100%; height: 100%; }
-    </style>
+<meta name="description" content="Med over 25 års erfaring er Cleanzone Norges fremste leverandør av ozonvannsteknologi for rengjøring. Våre løsninger, støttet av vår omfattende ekspertise, revolusjonerer rengjørings-bransjen."/>
+<meta property="og:title" content="Cleanzone"/>
+<meta property="og:type" content="website"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<link href="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/css/cleanzone-5938f4-df112d90709d67305d6e31.webflow.shared.e1e774118.min.css" rel="stylesheet" type="text/css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<script>
+WebFont.load({
+  google: {
+    families: [
+      "Oxanium:200,300,regular,500,600,700,800",
+      "Red Hat Display:300,regular,500,600,700,800,900,italic",
+      "Material Icons:regular"
+    ]
+  }
+});
+</script>
+
+<script>
+!function(o,c){
+  var n=c.documentElement,t=" w-mod-";
+  n.className+=t+"js",
+  ("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")
+}(window,document);
+</script>
+
+<link href="https://cdn.prod.website-files.com/6672eff692f59d4fc82f2427/66a88d6f8baf37107b34b6a4_Cleanzone%20Icon.png" rel="shortcut icon"/>
+<link href="https://cdn.prod.website-files.com/6672eff692f59d4fc82f2427/66a88d9bb7701653b6034c08_Cleanzone%20Webclip.png" rel="apple-touch-icon"/>
+
 </head>
+
 <body class="cleanzone-body">
-    
-    <div class="hero-video w-background-video">
-        <video autoplay loop muted playsinline>
-            <source src="video/hero.mp4" type="video/mp4"/>
-        </video>
-        
-        <nav class="cleanzone-navbar-white">
-            <div class="navbar__wrapper">
-                <div class="navbar-centering-layer">
-                    <div class="navbar-content-wrapper">
-                        <div class="navbar__container">
-                            <a href="index.html" class="cleanzone-logo-white w-nav-brand w--current">
-                                <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" loading="lazy" alt="Cleanzone Logo" class="logo-svg-embed-white"/>
-                            </a>
-                            <div class="navmenu__flex-container">
-                                <ul role="list" class="navmenu__link-list w-list-unstyled">
-                                    <li class="link-list__list-item cc-first">
-                                        <div class="navbar-text-white">Om oss</div>
-                                    </li>
-                                    <li class="link-list__list-item cc-first">
-                                        <div class="navbar-text-white">Våre ozonvannstjenester</div>
-                                    </li>
-                                    <li class="link-list__list-item cc-first">
-                                        <div class="navbar-text-white">Kontakt</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
-        <div class="hero-text-centering-bottom">
-            <div class="hero-text-wrapper">
-                <div class="hero-top-text-container">
-                    <div class="subtitle-hero-white">Rent har fått en<br/>ny betydning.</div>
-                </div>
-                <div class="hero-bottom-text-container">
-                    <div class="subtitle-hero-paragraph-white">
-                        Ved hjelp av ozon, en naturlig variant av <strong>oksygen</strong>, skaper vi <strong>vann</strong> som renser like effektivt som tradisjonelle rengjøringsmidler.<br/>Mer skånsomt og <strong>miljøvennlig</strong>.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="hero-video w-background-video">
 
-    <section class="testimonial-section">
-        <div class="testimonial-container">
-            <div class="testimonial-content-wrapper">
-                <h2 class="subtitle-blue">Kan miljøvennlig også være lønnsomt?</h2>
-                <p class="subtitle-paragraph-home">Hva har <span class="medium-span">Forsvaret</span>, <span class="medium-span">Thon-gruppen</span>, og <span class="medium-span">Stjørdal kommune</span> til felles? <br/>De har alle valgt en mer effektiv, miljøvennlig, og kostnadsbesparende rengjøringsløsning.</p>
-                <div class="testimonial-grid">
-                    <div class="testimonial-item-card">
-                        <img src="img/66a9391fb0c73849881e71fc_Spraybottle-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                        <h3 class="testimonial-heading">Alt-i-ett produkt</h3>
-                    </div>
-                    <div class="testimonial-item-card">
-                        <img src="img/66a9391fb0c73849881e71fa_Graph-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                        <h3 class="testimonial-heading">Kostnadsbesparende</h3>
-                    </div>
-                    <div class="testimonial-item-card">
-                        <img src="img/66a9391fb0c73849881e71fb_Recycle-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                        <h3 class="testimonial-heading">Bra for miljøet</h3>
-                    </div>
-                    <div class="testimonial-item-card-dt">
-                        <img src="img/679bc26768b6a87ba84bce28_Group 68-3.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                        <h3 class="testimonial-heading">Bra for deg</h3>
-                    </div>
-                    <div class="testimonial-item-card">
-                        <img src="img/66a9391fb0c73849881e71f9_Cleaning-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                        <h3 class="testimonial-heading">Enklere rengjøring</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<video autoplay loop muted playsinline>
+<source src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/686190682042a8f96d1c1a0e_Cleanzone_HERO_Forside_V4-transcode.mp4"/>
+<source src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/686190682042a8f96d1c1a0e_Cleanzone_HERO_Forside_V4-transcode.webm"/>
+</video>
 
-    <section id="SERVICE" class="services-section">
-        <div class="services-centering">
-            <div class="services-wrapper">
-                <h2 class="subtitle-smaller-blue">Våre tjenester</h2>
-                <div class="w-layout-layout services-stack">
-                    <div class="w-layout-cell left-services-cell">
-                        <h2 class="sub-hero-image-title">Cleanzone<br/>Service</h2>
-                        <p class="sub-hero-image-paragraph-services">Din partner i renhold av bygningsmasse. Fra fasaderens til rens av varmepumpe.</p>
-                        <a href="#" class="read-more-button-product w-button">Les mer</a>
-                    </div>
-                    <div class="w-layout-cell right-services-cell">
-                        <h2 class="sub-hero-image-title">Ozonvanns-<br/>pakker</h2>
-                        <p class="sub-hero-image-paragraph-services">Våre beste pakker for levering av ozonvannsutstyr og tjenester.</p>
-                        <a href="#" class="read-more-button-product w-button">Les mer</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <footer class="cleanzone-footer-wrapper">
-        <div class="footer-main-container w-container">
-            <div class="footer-content-centering">
-                <div class="footer-content-wrapper">
-                    <div class="footer-bottom">
-                        <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" loading="lazy" alt="Footer Logo" class="footer-logo-embed"/>
-                        <div class="footer-social-media-text">Følg oss i sosiale medier</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<nav class="cleanzone-navbar-white">
 
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+<div class="navbar__wrapper">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Re-point all images to local /img folder
-            document.querySelectorAll('img').forEach(img => {
-                let src = img.getAttribute('src');
-                if (src && (src.includes('website-files.com') || src.includes('archive.org'))) {
-                    let fileName = src.split('/').pop().split('?')[0];
-                    img.src = 'img/' + fileName;
-                }
-            });
-        });
-    </script>
+<a href="index.html" class="cleanzone-logo-white">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg"/>
+
+</a>
+
+<ul class="navmenu__link-list">
+
+<li>
+<a href="/om-oss">Om oss</a>
+</li>
+
+<li>
+<a href="/vare-pakker">Våre ozonvannstjenester</a>
+</li>
+
+<li>
+<a href="/kontakt-oss">Kontakt</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<section class="hero-text-centering-bottom">
+
+<h1>Rent har fått en ny betydning.</h1>
+
+<p>
+Ved hjelp av ozon, en naturlig variant av oksygen,
+skaper vi vann som renser like effektivt som
+tradisjonelle rengjøringsmidler.
+Mer skånsomt og miljøvennlig.
+</p>
+
+</section>
+<section class="testimonial-section">
+
+<div class="testimonial-container">
+<div class="testimonial-content-wrapper">
+
+<h2 class="subtitle-blue">
+Kan miljøvennlig også være lønnsomt?
+</h2>
+
+<p class="subtitle-paragraph-home">
+Hva har <span class="medium-span">Forsvaret</span>,
+<span class="medium-span">Thon-gruppen</span>,
+og <span class="medium-span">Stjørdal kommune</span>
+til felles?
+
+<br>
+
+De har alle valgt en mer effektiv,
+miljøvennlig og kostnadsbesparende rengjøringsløsning.
+
+<br>
+
+Med Cleanzone sier du farvel til dyrt og komplisert renhold,
+og hei til en enklere og grønnere hverdag!
+</p>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-item-card">
+
+<img
+src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/66a9391fb0c73849881e71fc_Spraybottle-blue.svg"
+class="testimonial-round-image"
+/>
+
+<h3 class="testimonial-heading">
+Alt-i-ett produkt
+</h3>
+
+</div>
+
+<div class="testimonial-item-card">
+
+<img
+src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/66a9391fb0c73849881e71fa_Graph-blue.svg"
+class="testimonial-round-image"
+/>
+
+<h3 class="testimonial-heading">
+Kostnadsbesparende
+</h3>
+
+</div>
+
+<div class="testimonial-item-card">
+
+<img
+src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/66a9391fb0c73849881e71fb_Recycle-blue.svg"
+class="testimonial-round-image"
+/>
+
+<h3 class="testimonial-heading">
+Bra for miljøet
+</h3>
+
+</div>
+
+<div class="testimonial-item-card">
+
+<img
+src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/679bc26768b6a87ba84bce28_Group%2068-3.svg"
+class="testimonial-round-image"
+/>
+
+<h3 class="testimonial-heading">
+Bra for deg
+</h3>
+
+</div>
+
+<div class="testimonial-item-card">
+
+<img
+src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/66a9391fb0c73849881e71f9_Cleaning-blue.svg"
+class="testimonial-round-image"
+/>
+
+<h3 class="testimonial-heading">
+Enklere rengjøring
+</h3>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+<section class="services-section">
+
+<div class="services-centering">
+<div class="services-wrapper">
+
+<h2 class="subtitle-smaller-blue">
+Våre tjenester
+</h2>
+
+<div class="services-stack">
+
+<div class="left-services-cell">
+
+<h2 class="sub-hero-image-title">
+Cleanzone
+<br>
+Service
+</h2>
+
+<p class="sub-hero-image-paragraph-services">
+Din partner i renhold av bygningsmasse.
+Fra fasaderens til rens av varmepumpe.
+</p>
+
+<a href="/cleanzone-service"
+class="read-more-button-product">
+Les mer
+</a>
+
+</div>
+
+<div class="right-services-cell">
+
+<h2 class="sub-hero-image-title">
+Ozonvanns
+<br>
+pakker
+</h2>
+
+<p class="sub-hero-image-paragraph-services">
+Våre beste pakker for levering
+av ozonvannsutstyr og tjenester.
+</p>
+
+<a href="/vare-pakker"
+class="read-more-button-product">
+Les mer
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+<section class="text-and-graphics-section">
+
+<div class="colored-area-polished-light-blue-graphics">
+
+<div class="text-area-graphics">
+
+<h2 class="subtitle-smaller-blue-np">
+Ozonvann
+</h2>
+
+<p class="cbg-colored-subscript">
+Natur møter teknologi
+</p>
+
+<p class="subtitle-lowered-image-paragraph-additional">
+
+Ved hjelp av ozon,
+en naturlig variant av oksygen,
+skaper vi vann som renser like effektivt
+som vanlige kunstige rengjøringsmidler.
+
+Mer skånsomt og miljøvennlig.
+
+<br><br>
+
+Når ozonvannet har gjort jobben sin,
+omdannes det raskt til helt vanlig vann
+og oksygen uten å etterlate spor i naturen.
+
+</p>
+
+<a href="/om-ozonvann"
+class="read-more-button-product-whiter">
+Lær mer om ozonvann
+</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="sub-hero-section">
+
+<div class="sub-hero-image-container-forest">
+
+<h2 class="sub-hero-image-title">
+En investering
+<br>
+for fremtiden
+</h2>
+
+<p class="sub-hero-image-paragraph">
+Ozonvannsteknologi er ikke bare smart
+for lommeboken, men også for miljøet.
+</p>
+
+<a href="/baerekraft" class="read-more-button-inverse">
+Les hvorfor
+</a>
+
+</div>
+
+</section>
+
+
+<section class="numbers-section">
+
+<div class="numbers-centering">
+<div class="numbers-wrapper">
+
+<h2 class="subtitle-smaller-blue">
+Fordeler som Cleanzone
+</h2>
+
+<div class="numbers-container">
+
+<div class="numbers-grid">
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+Antall kunder betjent
+</p>
+
+<p class="sub-hero-image-numbers">
+300
+</p>
+
+<p class="sub-hero-image-bottom-text">
+Siden 2020
+</p>
+
+</div>
+
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+Vann spart
+</p>
+
+<p class="sub-hero-image-numbers">
+87%
+</p>
+
+<p class="sub-hero-image-bottom-text">
+sammenliknet med andre rengjøringsmetoder
+</p>
+
+</div>
+
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+Kr spart per 100L
+</p>
+
+<p class="sub-hero-image-numbers">
+10k
+</p>
+
+<p class="sub-hero-image-bottom-text">
+sammenliknet med tradisjonelle kjemikalier
+</p>
+
+</div>
+
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+Kvm rengjort
+</p>
+
+<p class="sub-hero-image-numbers">
+100k
+</p>
+
+<p class="sub-hero-image-bottom-text">
+antall kvadratmeter rengjort
+</p>
+
+</div>
+
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+CO2 spart
+</p>
+
+<p class="sub-hero-image-numbers">
+91%
+</p>
+
+<p class="sub-hero-image-bottom-text">
+sammenliknet med tradisjonelle kjemikalier
+</p>
+
+</div>
+
+
+<div class="numbers-card">
+
+<p class="sub-hero-image-paragraph-numbers">
+Emballasje spart
+</p>
+
+<p class="sub-hero-image-numbers">
+93%
+</p>
+
+<p class="sub-hero-image-bottom-text">
+sammenliknet med tradisjonelle kjemikalier
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+
+<section class="text-area-section-product">
+
+<div class="text-area-centering">
+
+<h2 class="subtitle-smaller-blue">
+Våre kunder
+</h2>
+
+</div>
+
+</section>
+
+
+<section class="rotating-customers-section">
+
+<div class="container-large">
+
+<div class="logo_component-slider">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/67780d7fb805b8d80a1badba_Property%201%3DDefault.svg">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/677818cc4bbc694dc2d86891_Property%201%3DVariant3-2.svg">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/6778195d964a7d7e9ea97d19_Property%201%3DDefault-3.svg">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/6778199a966a362acb07bd18_Property%201%3DDefault-2.svg">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/677819cc68b35dd32932a3b2_Property%201%3DDefault-4.svg">
+
+<img src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/67781a472546012478d358b9_Property%201%3DDefault-5.svg">
+
+</div>
+
+</div>
+
+</section>
+<footer>
+
+<div class="footer-container">
+
+<p>
+© Cleanzone
+</p>
+
+<p>
+Miljøvennlig rengjøring med ozonvann
+</p>
+
+</div>
+
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdn.prod.website-files.com/66a9391fb0c73849881e70f2/js/webflow.js"></script>
+
+
 </body>
 </html>
