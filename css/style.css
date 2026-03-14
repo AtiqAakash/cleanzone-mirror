@@ -4,14 +4,9 @@ html {
     font-family: sans-serif
 }
 
-
 body {
-    color: #333;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 10.5px; /* Changed from 14px (75% of 14 is 10.5) */
-    line-height: 1.4;  /* Standardizes spacing at the new size */
+    margin: 0
 }
-
 
 article,
 aside,
@@ -2204,16 +2199,23 @@ a {
 }
 
 .hero-video {
-    width: 100%;
-    height: 100%;
+    box-sizing: content-box;
+    aspect-ratio: 1.31;
     object-fit: cover;
+    width: auto;
+    height: auto;
     display: block;
+    position: relative;
+    overflow: hidden
 }
 
 .navbar__container {
-    max-width: 1400px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
+    display: block
 }
 
 .navmenu__flex-container {
