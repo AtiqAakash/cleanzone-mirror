@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <style>
-        body { margin: 0; padding: 0; background: #000; font-family: sans-serif; }
-        .hero-video { position: relative; height: 100vh; width: 100%; overflow: hidden; }
+        body { margin: 0; padding: 0; background: #000; font-family: sans-serif; overflow-x: hidden; }
+        .hero-video { position: relative; height: 100vh; width: 100vw; overflow: hidden; }
         video { width: 100%; height: 100%; object-fit: cover; }
-        nav { position: absolute; top: 0; width: 100%; padding: 40px; z-index: 10; }
+        nav { position: absolute; top: 0; width: 100%; padding: 40px; z-index: 10; box-sizing: border-box; }
         .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 90%; z-index: 5; }
-        h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; line-height: 1.1; margin: 0; }
-        /* Force visibility since we aren't using all the original Webflow JS */
-        .cleanzone-body, h1, .hero-video { opacity: 1 !important; visibility: visible !important; display: block !important; }
+        h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; line-height: 1.1; margin: 0; text-transform: uppercase; }
+        /* Force visibility */
+        .cleanzone-body, h1, .hero-video, .page-wrapper { opacity: 1 !important; visibility: visible !important; display: block !important; }
     </style>
 </head>
 <body>
-    <div class="hero-video">
-        <video autoplay loop muted playsinline><source src="video/hero.mp4" type="video/mp4"></video>
-        <nav>
-            <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" style="width: 160px;" alt="Logo">
-        </nav>
-        <div class="hero-content">
-            <h1>Rent har fått en<br>ny betydning.</h1>
+    <div class="page-wrapper">
+        <div class="hero-video">
+            <video autoplay loop muted playsinline>
+                <source src="video/hero.mp4" type="video/mp4">
+            </video>
+            <nav>
+                <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" style="width: 160px;" alt="Cleanzone">
+            </nav>
+            <div class="hero-content">
+                <h1>Rent har fått en<br>ny betydning.</h1>
+            </div>
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js"></script>
