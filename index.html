@@ -83,37 +83,37 @@
                             <div class="navmenu__flex-container">
                                 <ul role="list" class="navmenu__link-list w-list-unstyled">
                                     <li class="link-list__list-item cc-first">
-                                        <div class="navbar-dropdown">
-                                            <div class="navbar-dropdown-toggle">
+                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
                                                 <div class="navbar-text-white">Om oss</div>
                                             </div>
-                                            <nav class="navbar-dropdown-list">
-                                                <a href="#team" class="navbar-dropdown-link">Teamet</a>
-                                                <a href="#baerekraft" class="navbar-dropdown-link">Bærekraft</a>
-                                                <a href="#kundeomtaler" class="navbar-dropdown-link">Kundeomtaler</a>
-                                                <a href="#om-ozonvann" class="navbar-dropdown-link">Om ozonvann</a>
+                                            <nav class="navbar-dropdown-list w-dropdown-list">
+                                                <a href="#team" class="navbar-dropdown-link w-dropdown-link">Teamet</a>
+                                                <a href="#baerekraft" class="navbar-dropdown-link w-dropdown-link">Bærekraft</a>
+                                                <a href="#kundeomtaler" class="navbar-dropdown-link w-dropdown-link">Kundeomtaler</a>
+                                                <a href="#om-ozonvann" class="navbar-dropdown-link w-dropdown-link">Om ozonvann</a>
                                             </nav>
                                         </div>
                                     </li>
                                     <li class="link-list__list-item cc-first">
-                                        <div class="navbar-dropdown">
-                                            <div class="navbar-dropdown-toggle">
+                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
                                                 <div class="navbar-text-white">Våre ozonvannstjenester</div>
                                             </div>
-                                            <nav class="navbar-dropdown-list">
-                                                <a href="#pakker" class="navbar-dropdown-link">Rengjøringspakker</a>
-                                                <a href="#service" class="navbar-dropdown-link">Cleanzone Service</a>
+                                            <nav class="navbar-dropdown-list w-dropdown-list">
+                                                <a href="#pakker" class="navbar-dropdown-link w-dropdown-link">Rengjøringspakker</a>
+                                                <a href="#service" class="navbar-dropdown-link w-dropdown-link">Cleanzone Service</a>
                                             </nav>
                                         </div>
                                     </li>
                                     <li class="link-list__list-item cc-first">
-                                        <div class="navbar-dropdown">
-                                            <div class="navbar-dropdown-toggle">
+                                        <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+                                            <div class="navbar-dropdown-toggle w-dropdown-toggle">
                                                 <div class="navbar-text-white">Kontakt</div>
                                             </div>
-                                            <nav class="navbar-dropdown-list">
-                                                <a href="#kontakt" class="navbar-dropdown-link">Kontakt oss</a>
-                                                <a href="#nyheter" class="navbar-dropdown-link">Nyheter</a>
+                                            <nav class="navbar-dropdown-list w-dropdown-list">
+                                                <a href="#kontakt" class="navbar-dropdown-link w-dropdown-link">Kontakt oss</a>
+                                                <a href="#nyheter" class="navbar-dropdown-link w-dropdown-link">Nyheter</a>
                                             </nav>
                                         </div>
                                     </li>
@@ -125,22 +125,21 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Navigation -->
-    <div class="mobile-navbar">
+       <div class="mobile-navbar">
         <div class="mobile-navbar-container">
             <div class="mobile-navbar-main">
                 <div class="mobile-logo-container">
                     <a href="/" aria-current="page" class="cleanzone-logo-white-mobile">
-                        <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" loading="lazy" alt="Cleanzone" style="width: 154px; height: 26px;"/>
+                        <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" alt="Cleanzone" style="width: 154px; height: 26px;"/>
                     </a>
                 </div>
                 <div class="mobile-menu-button">
-                    <div class="hamburger-icon">☰</div>
-                    <div class="close-icon">✕</div>
+                    <div class="hamburger-icon" style="display: block;">☰</div>
+                    <div class="close-icon" style="display: none;">✕</div>
                 </div>
             </div>
-            <nav class="mobile-navbar-menu">
+            <nav class="mobile-navbar-menu" style="display: none;">
                 <div class="navbar-mobile-menu-content-wrapper">
                     <div class="navbar-mobile-text-container">
                         <div class="mobile-navbar-title-blue">Om oss</div>
@@ -1096,6 +1095,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+    <!-- Navbar functionality -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Webflow-style navbar functionality
+$(document).ready(function() {
+    // Desktop dropdowns
+    $('.navbar-dropdown-toggle').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var $dropdown = $(this).closest('.navbar-dropdown');
+        var $list = $dropdown.find('.navbar-dropdown-list');
+        
+        // Close other dropdowns
+        $('.navbar-dropdown-list').not($list).slideUp(200);
+        
+        // Toggle current dropdown
+        $list.slideToggle(200);
+    });
+    
+    // Close dropdowns when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.navbar-dropdown').length) {
+            $('.navbar-dropdown-list').slideUp(200);
+        }
+    });
+    
+    // Mobile menu toggle
+    $('.mobile-menu-button').on('click', function() {
+        $('.mobile-navbar-menu').slideToggle(300);
+        $('.hamburger-icon').toggle();
+        $('.close-icon').toggle();
+    });
+    
+    // Close mobile menu on window resize
+    $(window).on('resize', function() {
+        if ($(window).width() > 768) {
+            $('.mobile-navbar-menu').hide();
+            $('.hamburger-icon').show();
+            $('.close-icon').hide();
+        }
+    });
+    
+    // Smooth scroll for anchor links
+    $('a[href*="#"]').on('click', function(e) {
+        if (this.hash !== '') {
+            e.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+});
+</script>
+    
 
 </body>
 </html>
