@@ -2204,23 +2204,16 @@ a {
 }
 
 .hero-video {
-    box-sizing: content-box;
-    aspect-ratio: 1.31;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: auto;
-    height: auto;
     display: block;
-    position: relative;
-    overflow: hidden
 }
 
 .navbar__container {
-    justify-content: space-between;
-    align-items: center;
-    max-width: none;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    display: block
 }
 
 .navmenu__flex-container {
