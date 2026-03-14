@@ -4,23 +4,6 @@ html {
     font-family: sans-serif
 }
 
-html {
-  /* Set the stage to be larger so the scale-down doesn't leave gaps */
-  width: 133.33%; 
-  height: 133.33%;
-  
-  /* Shrink everything by 25% */
-  transform: scale(0.75);
-  
-  /* Ensure it shrinks toward the top-left corner, not the center */
-  transform-origin: top left;
-  
-  /* Fixes potential blurriness in some browsers */
-  -webkit-font-smoothing: antialiased;
-  
-  /* Prevents horizontal scrollbars from appearing due to the width change */
-  overflow-x: hidden;
-}
 
 body {
     color: #333;
@@ -29,10 +12,6 @@ body {
     line-height: 1.4;  /* Standardizes spacing at the new size */
 }
 
-/* Also, tighten your main container if it feels too wide */
-.w-container {
-    max-width: 705px; /* 75% of the original 940px */
-}
 
 article,
 aside,
