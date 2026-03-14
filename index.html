@@ -45,6 +45,20 @@
             transform: translateX(-50%) translateY(-50%);
             object-fit: cover;
         }
+        .mobile-navbar-menu {
+            display: none;
+        }
+        .close-icon {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .cleanzone-navbar-white {
+                display: none !important;
+            }
+            .mobile-navbar {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 <body class="cleanzone-body">
@@ -55,7 +69,7 @@
         <source src="video/hero.mp4" type="video/mp4">
     </video>
 
-    <!-- Navigation - White Version -->
+    <!-- Navigation - White Version (Desktop) -->
     <nav class="cleanzone-navbar-white">
         <div class="navbar__wrapper">
             <div class="navbar-centering-layer">
@@ -113,20 +127,20 @@
     </nav>
 
     <!-- Mobile Navigation -->
-    <div class="mobile-navbar w-nav">
+    <div class="mobile-navbar">
         <div class="mobile-navbar-container">
             <div class="mobile-navbar-main">
                 <div class="mobile-logo-container">
-                    <a href="/" aria-current="page" class="cleanzone-logo-white-mobile w-nav-brand w--current">
+                    <a href="/" aria-current="page" class="cleanzone-logo-white-mobile">
                         <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" loading="lazy" alt="Cleanzone" style="width: 154px; height: 26px;"/>
                     </a>
                 </div>
                 <div class="mobile-menu-button">
                     <div class="hamburger-icon">☰</div>
-                    <div class="close-icon" style="display: none;">✕</div>
+                    <div class="close-icon">✕</div>
                 </div>
             </div>
-            <nav class="mobile-navbar-menu" style="display: none;">
+            <nav class="mobile-navbar-menu">
                 <div class="navbar-mobile-menu-content-wrapper">
                     <div class="navbar-mobile-text-container">
                         <div class="mobile-navbar-title-blue">Om oss</div>
@@ -317,7 +331,7 @@
 </section>
 
 <!-- Colored BG Section - Mobile -->
-<section id="inf" class="colored-bg-section">
+<section class="colored-bg-section">
     <div class="text-container">
         <h2 class="subtitle-smaller-blue-cbg">Ozonvann</h2>
         <p class="cbg-colored-subscript">Natur møter teknologi</p>
@@ -496,7 +510,7 @@
 <!-- Rotating Customers Section -->
 <section class="rotating-customers-section">
     <div class="section-logo">
-        <div class="page-padding">
+        <div class="page-padding s0">
             <div class="container-large">
                 <div class="padding-vertical padding-xxlarge">
                     <div class="logo_component-slider">
@@ -576,7 +590,7 @@
         </div>
     </div>
     <div class="section-logo">
-        <div class="page-padding">
+        <div class="page-padding s0">
             <div class="container-large">
                 <div class="padding-vertical padding-xxlarge">
                     <div class="logo_component-slider-reverse">
@@ -957,7 +971,7 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="grid-footer-logo-bottom">
-                        <a href="/" aria-current="page" class="footer-logo-wrapper w-inline-block w--current">
+                        <a href="/" aria-current="page" class="footer-logo-wrapper">
                             <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" loading="lazy" alt="Cleanzone" class="footer-logo-embed"/>
                         </a>
                         <div class="footer-social-media-container">
@@ -1027,7 +1041,7 @@
                         <img src="img/66fbfe44d50411f697fa1fad_Property 1=Default.svg" loading="lazy" alt="LinkedIn" class="footer-social-media-svg"/>
                     </a>
                 </div>
-                <a href="/" aria-current="page" class="footer-logo-wrapper-mobile w-inline-block w--current">
+                <a href="/" aria-current="page" class="footer-logo-wrapper-mobile">
                     <img src="img/66fc02b0111580cde17175bd_Cleanzone_mørk.svg" loading="lazy" alt="Cleanzone" style="width: 200px;"/>
                 </a>
             </div>
@@ -1075,9 +1089,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu on window resize (if window becomes larger)
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            mobileMenu.style.display = 'none';
-            hamburgerIcon.style.display = 'block';
-            closeIcon.style.display = 'none';
+            if (mobileMenu) mobileMenu.style.display = 'none';
+            if (hamburgerIcon) hamburgerIcon.style.display = 'block';
+            if (closeIcon) closeIcon.style.display = 'none';
         }
     });
 });
