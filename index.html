@@ -1,137 +1,32 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="utf-8"/>
-    <title>Cleanzone | Full Mirror</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-
+    <meta charset="utf-8">
+    <title>Cleanzone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <style>
-        /* 1. THE 75% ZOOM FIX */
-        html {
-            background-color: #000;
-            overflow-x: hidden;
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            font-family: 'Red Hat Display', sans-serif;
-            
-            /* Apply Zoom Out */
-            zoom: 0.75; 
-            -moz-transform: scale(0.75); 
-            -moz-transform-origin: 0 0;
-            
-            /* Fill screen width: 1 / 0.75 = 133.33% */
-            width: 133.33% !important; 
-            min-height: 133.33vh;
-        }
-
-        /* 2. VISIBILITY OVERRIDES (Fixes hidden/scrolling sections) */
-        .cleanzone-body, .page-wrapper, section, .section, div, h1, h2, h3, p, img {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important; /* Disables broken Wayback animations */
-        }
-
-        /* 3. HERO VIDEO & HEADER FIX */
-        .hero-video {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-        }
-
-        video {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .cleanzone-navbar-white {
-            position: absolute;
-            top: 0; width: 100%; padding: 40px 60px;
-            z-index: 10; box-sizing: border-box;
-            background: transparent !important;
-        }
-
-        /* Hide Wayback Toolbars */
-        #wm-ipp-base, .wm-rip, #wm-ipp-print { display: none !important; }
+        body { margin: 0; padding: 0; background: #000; font-family: sans-serif; }
+        .hero-video { position: relative; height: 100vh; width: 100%; overflow: hidden; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        nav { position: absolute; top: 0; width: 100%; padding: 40px; z-index: 10; }
+        .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 90%; z-index: 5; }
+        h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; line-height: 1.1; margin: 0; }
+        /* Force visibility since we aren't using all the original Webflow JS */
+        .cleanzone-body, h1, .hero-video { opacity: 1 !important; visibility: visible !important; display: block !important; }
     </style>
 </head>
-<body class="cleanzone-body">
-
-    <div class="page-wrapper">
-        
-        <div class="hero-video w-background-video">
-            <video autoplay loop muted playsinline data-object-fit="cover">
-                <source src="video/hero.mp4" type="video/mp4"/>
-            </video>
-
-            <nav class="cleanzone-navbar-white">
-                <a href="index.html" class="w-nav-brand">
-                    <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" style="width:200px" alt="Logo"/>
-                </a>
-            </nav>
-
-            <div class="hero-text-centering-bottom">
-                <div class="hero-text-wrapper" style="text-align:center; color:#fff; z-index:5; position:relative;">
-                    <h1 style="font-size: 6rem; font-weight: 800; text-transform: uppercase;">Rent har fått en<br/>ny betydning.</h1>
-                    <p style="font-size: 1.5rem; opacity: 0.9;">Ved hjelp av ozon skaper vi vann som renser like effektivt som kjemikalier.</p>
-                </div>
-            </div>
+<body>
+    <div class="hero-video">
+        <video autoplay loop muted playsinline><source src="video/hero.mp4" type="video/mp4"></video>
+        <nav>
+            <img src="img/66fc02b0897b4839d4162d10_Cleanzone_hvit.svg" style="width: 160px;" alt="Logo">
+        </nav>
+        <div class="hero-content">
+            <h1>Rent har fått en<br>ny betydning.</h1>
         </div>
-
-        <section class="testimonial-section">
-            <div class="testimonial-container">
-                <div class="testimonial-content-wrapper">
-                    <h2 class="subtitle-blue">Kan miljøvennlig også være lønnsomt?</h2>
-                    <p class="subtitle-paragraph-home">Hva har Forsvaret, Thon-gruppen, og Stjørdal kommune til felles?</p>
-                    <div class="testimonial-grid">
-                        <div class="testimonial-item-card">
-                            <img src="img/66a9391fb0c73849881e71fc_Spraybottle-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                            <h3 class="testimonial-heading">Alt-i-ett produkt</h3>
-                        </div>
-                        <div class="testimonial-item-card">
-                            <img src="img/66a9391fb0c73849881e71fa_Graph-blue.svg" loading="lazy" alt="" class="testimonial-round-image"/>
-                            <h3 class="testimonial-heading">Kostnadsbesparende</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // This repairs every image path automatically for you
-            document.querySelectorAll('img').forEach(img => {
-                let src = img.getAttribute('src');
-                if (src && src.includes('website-files.com')) {
-                    let fileName = src.split('/').pop().split('?')[0];
-                    img.src = 'img/' + fileName;
-                }
-            });
-
-            // Repairs any background videos
-            document.querySelectorAll('.w-background-video').forEach(vid => {
-                vid.innerHTML = '<video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;"><source src="video/hero.mp4" type="video/mp4"></video>';
-            });
-        });
-    </script>
-
+    </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
